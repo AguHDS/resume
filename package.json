@@ -1,0 +1,23 @@
+{
+  "name": "firstproject_api-node_db",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "npm run compile-scss && nodemon server.js",
+    "compile-scss": "npx sass ./public/main/main-style.scss:./public/styles/main-style.css"
+  },
+  "keywords": [],
+  "author": "Ag",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.2",
+    "express": "^4.18.2",
+    "mysql2": "^3.7.0",
+    "node-fetch": "^3.3.2",
+    "scss": "^0.2.4"
+  },
+  "devDependencies": {
+    "sass": "^1.70.0"
+  }
+}

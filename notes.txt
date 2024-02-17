@@ -1,0 +1,4 @@
+updatear nueva database server
+_cambiar nombre de proyecto en package.json al actual
+
+.correr watch sass abajo a la derecha para detectar cambios

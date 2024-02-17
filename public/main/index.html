@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Resume</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="main-style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar fixed-top text-uppercase w-100">
+        <div class="container">
+        <a class="navbar-brand font-weight-bold" href="#">Presentación</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link px-lg-4" href="#">Sobre mi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-lg-4" href="#">Proyectos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-lg-4" href="#">Contacto</a>
+            </li>
+          </ul>
+        </div>
+        </div>
+      </nav>
+    
+      <section class="main">
+        <div class="container">
+            <div class="row py-2">
+                <div class="col-lg-6 py-5 text-center">
+                    <h3><small>Soy </small> Agustin</h3>
+                    <img src="../images/profile.png">
+                    <h5>Software developer</h5>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <div class="content">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active c-item">
+              <img class="d-block w-100 c-img" src="../images/webdev.png" alt="First slide">
+              <div class="carousel-caption d-md-block">
+                <h5>Web development</h5>
+                <p>Front/back end</p>
+              </div>
+            </div>
+            <div class="carousel-item c-item">
+              <img class="d-block w-100 c-img" src="../images/responsive.png" alt="Second slide">
+              <div class="carousel-caption d-md-block">
+                <h5>Responsive design</h5>
+                <p>Mobile first methods</p>
+              </div>
+            </div>
+            <div class="carousel-item c-item">
+              <img class="d-block w-100 c-img" src="../images/webaccess.png" alt="Third slide">
+              <div class="carousel-caption d-md-block">
+                <h5>Accessibility</h5>
+                <p>Understanding of accessibility principles</p>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only"></span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only"></span>
+          </a>
+        </div>
+      </div>
+
+      <section class="about py-1">
+        <div class="container py-5">
+          <div class="row">
+            <div class="col-lg-5 py-2 d-flex align-items-center">
+              <div class="text-center">
+                <h1>About me</h1>
+                <p>Web designer</p>
+                <p>I am <b>Agustin Butti</b> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, sint ad 
+                  assumenda illum deleniti culpa impedit perferendis consequuntur magnam cum. Eligendi tenetur, ipsum inventore tempora a doloribus
+                  debitis saepe quod.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, sint ad 
+                  assumenda illum deleniti culpa impedit perferendis consequuntur magnam cum. Eligendi tenetur, ipsum inventore tempora a doloribus
+                  debitis saepe quod</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+    <script src="main.js" type="module"></script>
+</body>
+</html>
