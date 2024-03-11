@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>My Resume</title>
+    <title>Resume - Home</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
@@ -13,92 +13,108 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar fixed-top text-uppercase w-100">
         <div class="container">
-        <a class="navbar-brand font-weight-bold" href="#">Presentación</a>
+        <h1 class="navbar-brand font-weight-bold" href="#">Presentación</h1>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link px-lg-4" href="#">Sobre mi</a>
+              <h2 class="nav-link px-lg-4" href="#">Sobre mi</h2>
             </li>
             <li class="nav-item">
-              <a class="nav-link px-lg-4" href="#">Proyectos</a>
+              <h2 class="nav-link px-lg-4" href="#">Proyectos</h2>
             </li>
             <li class="nav-item">
-              <a class="nav-link px-lg-4" href="#">Contacto</a>
+              <h2 class="nav-link px-lg-4" href="#">Contacto</h2>
             </li>
           </ul>
         </div>
         </div>
       </nav>
-    
       <section class="main">
         <div class="container">
             <div class="row py-2">
                 <div class="col-lg-6 py-5 text-center">
                     <h3><small>Soy </small> Agustin</h3>
-                    <img src="../images/profile.png">
+                    <img src="../images/profile.png" alt="Profile image">
                     <h5>Software developer</h5>
                 </div>
             </div>
         </div>
       </section>
-
       <div class="content">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active c-item">
-              <img class="d-block w-100 c-img" src="../images/webdev.png" alt="First slide">
-              <div class="carousel-caption d-md-block">
+              <img class="d-block w-100 c-img" src="../images/webdev.png" alt="Web development - front and backend">
+              <div class="carousel-caption" aria-labelledby="carousel-heading" aria-describedby="carousel-description">
                 <h5>Web development</h5>
                 <p>Front/back end</p>
               </div>
             </div>
             <div class="carousel-item c-item">
-              <img class="d-block w-100 c-img" src="../images/responsive.png" alt="Second slide">
-              <div class="carousel-caption d-md-block">
+              <img class="d-block w-100 c-img" src="../images/responsive.png" alt="Adaptable design - Mobile first">
+              <div class="carousel-caption" aria-labelledby="carousel-heading" aria-describedby="carousel-description">
                 <h5>Responsive design</h5>
                 <p>Mobile first methods</p>
               </div>
             </div>
             <div class="carousel-item c-item">
-              <img class="d-block w-100 c-img" src="../images/webaccess.png" alt="Third slide">
-              <div class="carousel-caption d-md-block">
+              <img class="d-block w-100 c-img" src="../images/webaccess.png" alt="Accessibility principles">
+              <div class="carousel-caption" aria-labelledby="carousel-heading" aria-describedby="carousel-description">
                 <h5>Accessibility</h5>
                 <p>Understanding of accessibility principles</p>
               </div>
             </div>
           </div>
-          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev" aria-label="Previous">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only"></span>
           </a>
-          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next" aria-label="Next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only"></span>
           </a>
         </div>
       </div>
-
-      <section class="about py-1">
-        <div class="container py-5">
-          <div class="row">
-            <div class="col-lg-5 py-2 d-flex align-items-center">
-              <div class="text-center">
-                <h1>About me</h1>
-                <p>Web designer</p>
-                <p>I am <b>Agustin Butti</b> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, sint ad 
-                  assumenda illum deleniti culpa impedit perferendis consequuntur magnam cum. Eligendi tenetur, ipsum inventore tempora a doloribus
-                  debitis saepe quod.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, sint ad 
-                  assumenda illum deleniti culpa impedit perferendis consequuntur magnam cum. Eligendi tenetur, ipsum inventore tempora a doloribus
-                  debitis saepe quod</p>
-              </div>
-            </div>
+      <div class="text-center"><br>
+        <h1>Caracteristicas</h1><br>
+      </div>
+      <section class="features">
+          <div class="flexbuttons-right">
+            <button type="button" class="btn btn-primary" id="btn-technologies-right">Tecnologías</button>
+            <button type="button" class="btn btn-primary" id="btn-projects-right">Proyectos</button>
+            <button type="button" class="btn btn-primary" id="btn-about-right">Sobre mí</button>
+          </div>
+          <!-- <div class="flexbuttons-top">
+            <button type="button" class="btn btn-primary" id="btn-technologies-top">Tecnologías</button>
+            <button type="button" class="btn btn-primary" id="btn-projects-top">Proyectos</button>
+            <button type="button" class="btn btn-primary" id="btn-about-top">Sobre mí</button>
+          </div> -->
+        <div class="featsmiddle-container">
+          <div class="container-img">
+            <img class="img-fluid opacity" src="../images/boostrap.png">
+            <img class="img-fluid opacity" src="../images/js.png">
+            <img class="img-fluid opacity" src="../images/sass.png">
+            <img class="img-fluid opacity" src="../images/Git-Icon-1788C.png">
+            <img class="img-fluid opacity" src="../images/node.png">
+            <img class="img-fluid opacity" src="../images/sql.png">
+            <img class="img-fluid opacity" src="../images/angular.png">
+            <img class="img-fluid opacity" src="../images/wordpress.png">
+            <img class="img-fluid opacity" src="../images/vue.png">
+            <img class="img-fluid opacity" src="../images/python.png">
           </div>
         </div>
-      </section>
+        
+          <div class="flexbuttons-left">
+            <button type="button" class="btn btn-primary btnLeft" id="btn-practice">Cuales quiero aprender</button>
+            <button type="button" class="btn btn-primary btnLeft" id="btn-uses">Cuales uso</button>
+            <button type="button" class="btn btn-primary btnLeft" id="btn-pro">Usadas en ámbito laboral</button>
+          </div>
       
+      </section>
+      <h1>Caracteristicas</h1><br> <h1>Caracteristicas</h1><br> <h1>Caracteristicas</h1><br> <h1>Caracteristicas</h1><br>
     <script src="main.js" type="module"></script>
 </body>
 </html>
