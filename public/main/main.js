@@ -5,7 +5,7 @@ const vars = {
     PRACTICE: 'btn-practice',
     PROF: 'btn-pro'
   },
-  
+  //pija
 
   // logic
   number: undefined,
