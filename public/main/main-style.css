@@ -12144,6 +12144,9 @@ section.main {
   .features .featsmiddle-container .container-img {
     position: relative;
     top: 20%;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
   }
   .features .featsmiddle-container .img-fluid {
     margin-left: 4%;

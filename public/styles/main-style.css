@@ -12023,6 +12023,7 @@ section.main {
   .features .featsmiddle-container .container-img {
     position: relative;
     top: 20%;
+    user-select: none;
   }
   .features .featsmiddle-container .img-fluid {
     margin-left: 4%;

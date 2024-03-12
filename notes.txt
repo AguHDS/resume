@@ -3,6 +3,4 @@ _cambiar nombre de proyecto en package.json al actual
 
 .correr watch sass abajo a la derecha para detectar cambios
 
-.poner en la zona de tecnologias los tres botones uno abajo del otro a la izquierda, y a la derecha un cuadrado que contnga todas las imagenes 
-en gris y cuando se clickeen los botones que las remarque en verde
 abajo de eso poner un mini history explicando cuales uso, practico, etc..... cuando se clickee el boton

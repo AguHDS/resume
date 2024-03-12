@@ -173,6 +173,7 @@ section.main {
       .container-img {
         position: relative;
         top: 20%;
+        user-select: none;
       }
       .img-fluid {
         margin-left: 4%;
