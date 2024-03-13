@@ -103,11 +103,19 @@ section.main {
   }
 }
 
+.separator img {
+  text-align: center;
+  display: block;
+  margin: auto;
+  width: 80%;
+}
+
 .features {
   width: 80vw;
   position: relative;
+  margin-top: 40px;
   background-color: rgb(46, 22, 144);
-  border-radius: 4px;
+  border-radius: 23px;
   height: 400px;
   transform: translate(12%, 0%);
 
@@ -125,7 +133,7 @@ section.main {
 }
 
 .featsmiddle-container {
-    height: 70%;
+    height: 30%;
     right: 0;
     position: relative;
     background-color: #1b075a;
@@ -136,6 +144,15 @@ section.main {
       width: 12%;
     }
   }
+}
+.featsmiddle-description {
+    width: 76%;
+    left: 12.6%;
+    display: none;
+    background-color: #1b075a;
+    top: 52%;
+    height: 9%;
+    position: absolute;
 }
 .flexbuttons-left {
     position: absolute;
@@ -154,18 +171,28 @@ section.main {
     background-color: #2e53a5;
   }
 }
-// for PC device
-@media screen and (max-width: 1920px) and (min-width: 1024px) {
+
+.opacity {
+  opacity: 15%;
+}
+
+// for PC device|
+
+@media screen and (max-width: 3841px) and (min-width: 1024px){
+  .separator img {
+    width: 45%;
+  }
   .features {
     width: 79vw;
     position: relative;
     background-color: rgb(46, 22, 144);
-    border-radius: 4px;
+    border-radius: 30px;
     height: 400px;
+    box-shadow: inset 0px 0px 0px 10px rgb(64 80 157);
     transform: translate(13%, 0%);
     .featsmiddle-container {
       width: 56%;
-      top: 109px;
+      top: 112px;
       left: 22%;
       height: 18%;
       border-radius: 40px;
@@ -176,9 +203,21 @@ section.main {
         user-select: none;
       }
       .img-fluid {
-        margin-left: 4%;
+        margin-left: 3%;
         width: 5%;
       }
+      @media screen and (min-width: 2880px) and (max-width: 3840px) {
+        .container-img .img-fluid {
+          width: 3%;
+        }
+      }
+    }
+    .featsmiddle-description {
+      width: 51%;
+      display: none;
+      left: 24.6%;
+      top: 59%;
+      height: 12%;
     }
     .flexbuttons-right {
       display: flex;
@@ -197,6 +236,10 @@ section.main {
     .flexbuttons-left {
       display: flex;
       width: 15%;
+      left: 1%;
+      width: 15%;
+      border-radius: 9%;
+      background-color: #1b075a;
       height: 44%;
       flex-direction: column;
       transform: translate(0%, -62%);
@@ -212,11 +255,7 @@ section.main {
     }
   }
 }
-
-.opacity {
-  opacity: 15%;
-}
-//for moble
+//for mobile
 @media screen and (max-width: 820px) {
   .content {
     width: 90%;
@@ -237,9 +276,24 @@ section.main {
     height: 210px;
   }
 }
-
+@media screen and (max-width: 912px) and (min-width: 768px) {
+  .flexbuttons-left {
+    left: 10%;
+  }
+}
+/* @media screen and (max-width: 360px) {
+  .featsmiddle-container {
+    height: 30%;
+  }
+} */
 @media screen and (max-width: 336px) {
   .features .flexbuttons-top {
     flex-direction: column;
   }
+  .featsmiddle-description {
+    top: 65%;
+  }
+/*   .featsmiddle-container {
+    height: 73%;
+  } */
 }

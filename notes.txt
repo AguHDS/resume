@@ -4,3 +4,8 @@ _cambiar nombre de proyecto en package.json al actual
 .correr watch sass abajo a la derecha para detectar cambios
 
 abajo de eso poner un mini history explicando cuales uso, practico, etc..... cuando se clickee el boton
+
+poner la parte de las imagenes del html dentro de un div para esa zona, y hacer lo mismo para los otros 3 botones de la derecha
+separar componentes y poner en su index quizas el script js abajo para poder usar backsticks en el htlm directamente como con {{}}
+separar scss de cada parte de la pagina, cuadrado con botones caracteristicas, modals, etc....
+el cuadrado grande con las caracteristicas deberia tener su propio html y ser puesto en el dom por JS como hice en el otro proyecto con el modal

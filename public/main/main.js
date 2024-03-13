@@ -1,6 +1,6 @@
 const vars = {
   // DOM
-  flexOpts: document.querySelector('.flex-options'),
+  flexBtns: document.querySelector('.flex-buttons'),
   flexTop: `<div class="flexbuttons-top">
   <button type="button" class="btn btn-primary" id="btn-technologies-top">Tecnologías</button>
   <button type="button" class="btn btn-primary" id="btn-projects-top">Proyectos</button>
@@ -23,13 +23,9 @@ const vars = {
       iconsArr = Array.from(iconsArr);
 
      let iconsUses = [iconsArr[0], iconsArr[1], iconsArr[2], iconsArr[3], iconsArr[4], iconsArr[5]];
-     let iconsPractice = [iconsArr[4], iconsArr[6], iconsArr[9]];
+     let iconsPractice = [iconsArr[5], iconsArr[6], iconsArr[9], iconsArr[10]];
      let iconsProf = [iconsArr[0], iconsArr[1], iconsArr[2], iconsArr[3], iconsArr[4], iconsArr[5], iconsArr[7], iconsArr[8]];
-     return {
-      iconsUses: iconsUses,
-      iconsPractice: iconsPractice,
-      iconsProf: iconsProf
-     };
+     return { iconsUses: iconsUses,iconsPractice: iconsPractice,iconsProf: iconsProf };
     },
     initializeButtonStatus: function() {
       const setIcons = this.iArray();
@@ -45,17 +41,13 @@ const vars = {
   // logic
   number: undefined,
 };
-
-const flexWidth = ()=> {
+function flexWidth() {
   let width = screen.width;
-  width >= 1024 ? vars.flexOpts.innerHTML = vars.flexRight : vars.flexOpts.innerHTML = vars.flexTop;
-};
+  width >= 1024 ? vars.flexBtns.innerHTML = vars.flexRight : vars.flexBtns.innerHTML = vars.flexTop;
+}
+
 window.addEventListener('load', flexWidth);
 window.addEventListener('resize', flexWidth);
-
-window.addEventListener('resize', ()=>{
-  console.log('asd')
-});
 
 const showTechIcons = (e)=> {
   const { id } = e.target;
@@ -110,5 +102,6 @@ const showTechIcons = (e)=> {
     break;
   }
 };
-const filteredValues = Object.values(vars.BUTTONS).filter(v => typeof v !== 'function');
+
+const filteredValues = Object.values(vars.BUTTONS).filter(value => typeof value !== 'function');
 filteredValues.forEach(bId => document.getElementById(bId).addEventListener('click', showTechIcons));
