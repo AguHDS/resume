@@ -1,0 +1,142 @@
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+
+* {
+  // Normalize elements
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  padding-top: 57px;
+}
+
+.navbar {
+    background-color: rgb(33, 58, 149);
+    box-shadow: 0 0 10px;
+    .navbar-brand {
+      color: white;
+      pointer-events: none;
+      &:focus {
+        color: white;
+      }
+    }
+    .px-lg-4 {
+        color: white;
+        margin-left: 5px;
+        margin-right: 5px;
+        cursor: pointer;
+        &:hover {
+        color: var(--bs-gray-400);
+      }
+      &:focus {
+        border: 1px solid white;
+      }
+    }
+  }
+
+.main {
+  h3 {
+    font-size: -webkit-xxx-large;
+    font-weight: 400;
+    margin-bottom: auto;
+  }
+  img {
+    width: 200px;
+    margin: auto;
+    display: block;
+  }
+  h5 {
+    line-height: 1;
+    font-size: x-large;
+    font-family: math;
+    font-weight: 500;
+    width: -moz-max-content;
+    display: inline-block;
+    border-bottom: 1px solid blue;
+    margin-bottom: auto;
+  }
+  .row {
+    justify-content: center;
+  }
+}
+
+section.main {
+  align-content: center;
+  height: 375px;
+  margin: 14px;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.content {
+    width: 60%;
+    position: relative;
+    bottom: 25px;
+    margin: 0 auto;
+    justify-content: left;
+    align-items: center;
+    border-radius: 9px;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+    overflow: hidden;
+
+    .carousel-control {
+      &-prev-icon {
+        right: 50px;
+        position: relative;
+        width: 100%;
+      }
+      &-next-icon {
+        right: -50px;
+        position: relative;
+        width: 100%;
+    } 
+  }
+  .c-item {
+    height: 480px;
+  }
+  .c-img {
+    height: 100%;
+  }
+  .carousel-caption {
+    bottom: 0;
+    padding: 0;
+  }
+}
+
+.separator img {
+  text-align: center;
+  display: block;
+  margin: auto;
+  width: 80%;
+}
+
+// for PC device|
+@media screen and (max-width: 3841px) and (min-width: 1024px){
+  .separator img {
+    width: 45%;
+  }
+  
+}
+//for mobile
+@media screen and (max-width: 820px) {
+  .content {
+    width: 90%;
+    height: auto;
+  }
+
+  .content .c-item {
+    height: 300px;
+  }
+
+  .carousel-caption {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .content .c-item {
+    height: 210px;
+  }
+}

@@ -8,42 +8,43 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="main-style.css">
+    <link rel="stylesheet" type="text/css" href="/src/styles-compile/main-style.css">
+    <link rel="stylesheet" type="text/css" href="/src/styles-compile/features.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar fixed-top text-uppercase w-100">
         <div class="container">
-        <h1 class="navbar-brand font-weight-bold" href="#">Presentación</h1>
+        <h1 class="navbar-brand font-weight-bold" href="#" title="brand" aria-label="Presentation" tabindex="0">Presentación</h1>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <h2 class="nav-link px-lg-4" href="#">Sobre mi</h2>
+              <h2 class="nav-link px-lg-4" href="#" role="about" aria-label="About me" tabindex="0">Sobre mi</h2>
             </li>
             <li class="nav-item">
-              <h2 class="nav-link px-lg-4" href="#">Proyectos</h2>
+              <h2 class="nav-link px-lg-4" href="#" role="projects" aria-label="My projects" tabindex="0">Proyectos</h2>
             </li>
             <li class="nav-item">
-              <h2 class="nav-link px-lg-4" href="#">Contacto</h2>
+              <h2 class="nav-link px-lg-4" href="#" role="contact" aria-label="Contact me" tabindex="0">Contacto</h2>
             </li>
           </ul>
         </div>
         </div>
       </nav>
-      <section class="main">
+      <section class="main">  
         <div class="container">
             <div class="row py-2">
                 <div class="col-lg-6 py-5 text-center">
-                    <h3><small>Soy </small> Agustin</h3>
-                    <img src="../images/profile.png" alt="Profile image">
-                    <h5>Software developer</h5>
+                    <h3 title="name" aria-label="My name" tabindex="0">Prueba xd</h3>
+                    <img src="../images/profile.png" alt="Profile image" tabindex="0">
+                    <h5 title="subtext" aria-label="Subtext" tabindex="0">Software developer</h5>
                 </div>
             </div>
         </div>
       </section>
-      <div class="content">
+      <div class="content" title="carousel" aria-label="carousel with images" tabindex="0">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active c-item">
@@ -68,50 +69,25 @@
               </div>
             </div>
           </div>
-          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev" aria-label="Previous">
+          <a class="carousel-control-prev" href="#carouselExampleControls" data-slide="prev" role="button" aria-label="Previous" tabindex="0">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only"></span>
           </a>
-          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next" aria-label="Next">
+          <a class="carousel-control-next" href="#carouselExampleControls" data-slide="next" role="button" aria-label="Next" tabindex="0">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only"></span>
           </a>
         </div>
       </div>
       <div class="text-center">
-        <h1>Caracteristicas</h1><br>
+        <h1 title="features" aria-label="My features" tabindex="0">Caracteristicas</h1><br>
       </div>
-      <div class="separator">
+      <div class="separator" role="separator" aria-label="Section separator" tabindex="0">
         <img id="divisor" alt="separator image" src="../images/divider.png">
       </div>
-      <section class="features">
-        <div class="flex-buttons"></div>
-        <div class="featsmiddle-container">
-          <div class="container-img">
-            <img class="img-fluid opacity" alt="boostrap icon" title="boostrap" src="../images/boostrap.png">
-            <img class="img-fluid opacity" alt="javascript icon" title="javascript" src="../images/js.png">
-            <img class="img-fluid opacity" alt="sass icon" title="sass" src="../images/sass.png">
-            <img class="img-fluid opacity" alt="git icon" title="git" src="../images/Git-Icon-1788C.png">
-            <img class="img-fluid opacity" alt="sql icon" title="sql" src="../images/sql.png">
-            <img class="img-fluid opacity" alt="node icon" title="node" src="../images/node.png">
-            <img class="img-fluid opacity" alt="angular icon" title="angular" src="../images/angular.png">
-            <img class="img-fluid opacity" alt="wordpress icon" title="wordpress" src="../images/wordpress.png">
-            <img class="img-fluid opacity" alt="vue icon" title="vue" src="../images/vue.png">
-            <img class="img-fluid opacity" alt="typescript icon icon" title="typescript" src="../images/typescript.png">
-            <img class="img-fluid opacity" alt="python icon" title="python" src="../images/python.png">
-          </div>
-        </div>
-        <div class="featsmiddle-description">
-          <div class="text"></div>
-        </div>
-          <div class="flexbuttons-left">
-            <button type="button" class="btn btn-primary btnLeft" id="btn-practice">Cuales quiero aprender</button>
-            <button type="button" class="btn btn-primary btnLeft" id="btn-uses">Cuales uso</button>
-            <button type="button" class="btn btn-primary btnLeft" id="btn-pro">Usadas en ámbito laboral</button>
-          </div>
-      </section>
-      <h1>Caracteristicas</h1><br> <h1>Caracteristicas</h1><br> <h1>Caracteristicas</h1><br> <h1>Caracteristicas</h1><br>
+      <div class="dynamic-feats" tabindex="0"></div>
 
-    <script src="main.js" type="module"></script>
+    <script src="/src/main/main.js" type="module"></script>
+    <script src="/src/features/features.js" type="module"></script>
 </body>
 </html>

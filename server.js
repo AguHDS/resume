@@ -8,9 +8,8 @@ app.use(express.urlencoded({extended: false})); //false: uses querystring to wor
                                                 //true: uses qs to work with complex urls. ex: /?users[09]=Var&age=16&{ex: "ex"}
 
 const publicPath = path.join(__dirname, "public"); //takes actual folder path and then select "public folder"
-const mainPath = path.join(publicPath, "main");
+const mainPath = path.join(publicPath, "src/main");
 app.use(express.static(publicPath)); //tells express to use static files in this path
-app.use(express.static(mainPath));
 
 app.use('/node_modules', express.static(path.join(__dirname, 'node_modules'))); //for boostrap
 app.use(express.static(publicPath));

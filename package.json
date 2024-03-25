@@ -4,8 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "npm run compile-scss && nodemon server.js",
-    "compile-scss": "npx sass ./public/main/main-style.scss:./public/styles/main-style.css"
+    "start": "nodemon server.js"
   },
   "keywords": [],
   "author": "Ag",
