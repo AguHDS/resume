@@ -31,7 +31,7 @@
       position: absolute;
       top: 10%;
       .img-fluid {
-        width: 12%;
+        width: 35px;
       }
     }
   }
@@ -67,15 +67,16 @@
   }
 
   //for PC device
-.features {
-    width: 79vw;
-    position: relative;
-    background-color: rgb(46, 22, 144);
-    border-radius: 30px;
-    height: 400px;
-    box-shadow: inset 0px 0px 0px 10px #2e53a5;
-    transform: translate(13%, 0%);
-    .featsmiddle-container {
+  @media screen and (max-width: 3841px) and (min-width: 1024px){
+    .features {
+      width: 79vw;
+      position: relative;
+      background-color: rgb(46, 22, 144);
+      border-radius: 30px;
+      height: 400px;
+      box-shadow: inset 0px 0px 0px 10px #2e53a5;
+      transform: translate(13%, 0%);
+      .featsmiddle-container {
         width: 56%;
         top: 112px;
         left: 22%;
@@ -86,20 +87,19 @@
         position: relative;
         top: 20%;
         user-select: none;
-        }
+      }
         .img-fluid {
         margin-left: 3%;
         width: 5%;
+      }
+      @media screen and (min-width: 2880px) and (max-width: 3840px) {
+      .container-img .img-fluid {
+          width: 3%;
         }
-        @media screen and (min-width: 2880px) and (max-width: 3840px) {
-        .container-img .img-fluid {
-            width: 3%;
-          }
       }
     }
     .featsmiddle-description {
         width: 51%;
-        
         left: 24.6%;
         top: 59%;
         height: 12%;
@@ -116,34 +116,41 @@
         height: -webkit-fill-available;
         border: 1px solid #1f166e;
         background-color: #2e53a5;
-        }
+      }
     }
     .flexbuttons-left {
-        display: flex;
-        width: 15%;
-        left: 1%;
-        width: 15%;
-        border-radius: 9%;
-        background-color: #1b075a;
-        height: 44%;
-        flex-direction: column;
-        transform: translate(0%, -62%);
-          button {
-          overflow: hidden;
-          margin: 10px;
-          white-space: nowrap;
-          text-overflow: ellipsis;
-          width: -webkit-fill-available;
-          border-radius: 16px;
-          background-color: #2e53a5;
-          }
+      display: flex;
+      width: 15%;
+      left: 1%;
+      width: 15%;
+      border-radius: 9%;
+      background-color: #1b075a;
+      height: 44%;
+      flex-direction: column;
+      transform: translate(0%, -62%);
+        button {
+        overflow: hidden;
+        margin: 10px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: -webkit-fill-available;
+        border-radius: 16px;
+        background-color: #2e53a5;
       }
+    }
+  }
 }
-@media screen and (max-width: 912px) and (min-width: 768px) {
+@media screen and (min-width: 920px) and (max-width: 1023px) {
+  .flexbuttons-left {
+    left: 15%;
+  }
+}
+@media screen and (max-width: 912px) and (min-width: 699px) {
     .flexbuttons-left {
       left: 10%;
     }
   }
+ 
   @media screen and (max-width: 336px) {
     .features .flexbuttons-top {
       flex-direction: column;
