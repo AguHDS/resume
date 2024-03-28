@@ -1,14 +1,17 @@
 import { getFeatures } from '../main/main.js';
+
 let number = undefined;
 let feats = document.querySelector('.features'); //xd
+const techButtons = ['']
+
 const waitForFeatures = async () => {
   if(!feats) { //verifico si feats no existe, si no existe es porque el html dinamico no se agergó
     await getFeatures(); 
   }
-  
+
   const vars = {
     //DOM
-    flexBtns: document.querySelector('.flex-buttons'), //flex div to make flexTop, flexRight (right buttons) dynamics
+    flexBtns: document.querySelector('.flex-buttons'), //flex div to make main buttons responsive
     flexTop: `<div class="flexbuttons-top">
       <button type="button" class="btn btn-primary" id="btn-technologies-top" role="button" tabindex="0">Tecnologías</button>
       <button type="button" class="btn btn-primary" id="btn-projects-top" role="button" tabindex="0">Proyectos</button>
@@ -19,21 +22,26 @@ const waitForFeatures = async () => {
       <button type="button" class="btn btn-primary" id="btn-projects-right" role="button" tabindex="0">Proyectos</button>
       <button type="button" class="btn btn-primary" id="btn-about-right" role="button" tabindex="0">Sobre mí</button>
     </div>`,
+
     BUTTONS: {
       USES: 'btn-uses',
       PRACTICE: 'btn-practice',
       PROF: 'btn-pro',
+      
       // Get all images and store them in different arrays
       iArray: function() {
         let iconsArr = document.querySelector('.container-img').children;
         iconsArr = Array.from(iconsArr);
+
         let iconsUses = [iconsArr[0], iconsArr[1], iconsArr[2], iconsArr[3], iconsArr[4], iconsArr[5]];
         let iconsPractice = [iconsArr[5], iconsArr[6], iconsArr[9], iconsArr[10]];
         let iconsProf = [iconsArr[0], iconsArr[1], iconsArr[2], iconsArr[3], iconsArr[4], iconsArr[5], iconsArr[7], iconsArr[8]];
+
         return { iconsUses: iconsUses, iconsPractice: iconsPractice, iconsProf: iconsProf };
       },
       initializeButtonStatus: function() {
         const setIcons = this.iArray();
+
         const buttonStates = {
           [this.USES]: { number: number, icons: setIcons.iconsUses },
           [this.PRACTICE]: { number: number, icons: setIcons.iconsPractice },
@@ -43,14 +51,21 @@ const waitForFeatures = async () => {
       }
     }
   };
-  return vars;//vars es parte del then asi que esto se puede quitar
+  return vars;// vars es parte del then asi que esto se puede quitar
 };
 
-export const flexWidth = async() => {
+const infoFeatures = ()=> {
+  switch(id) {
+
+  }
+}
+
+const flexWidth = async() => {
   const data = await waitForFeatures();
-    let width = screen.width;
-    if (width >= 1024) {
-      data.flexBtns.innerHTML = data.flexRight;
+    let innerWidth = window.innerWidth;
+    
+    if (innerWidth >= 1024) {
+      data.flexBtns.innerHTML = data.flexRight; //probablemente vuelve a ejecutar la funcion para ahcer el innerhtml, probar con display none en su lugar poniendo los botones directamente en el html
     } else {
       data.flexBtns.innerHTML = data.flexTop;
     }
@@ -133,3 +148,4 @@ const initializeButtons = async () => {
 
 // Llama a la función para inicializar los botones
 initializeButtons();
+

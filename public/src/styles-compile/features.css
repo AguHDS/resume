@@ -11864,12 +11864,28 @@ textarea.form-control-lg {
   height: 400px;
   transform: translate(12%, 0%);
 }
-.features .flexbuttons-top {
+.features .initial-message {
+  color: white;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  top: 45%;
+  font-family: auto;
+  font-size: large;
+}
+.features .techs {
+  display: none;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+}
+
+.flexbuttons-top {
   position: relative;
   display: flex;
   max-width: 100%;
 }
-.features .flexbuttons-top button {
+.flexbuttons-top button {
   max-width: 100%;
   width: -webkit-fill-available;
   border-radius: 0px;
@@ -11917,8 +11933,51 @@ textarea.form-control-lg {
   background-color: #2e53a5;
 }
 
+.myprojects-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+  flex-direction: column;
+  display: none;
+}
+
+.angular-project, .node-project, .python-project {
+  background-color: red;
+  width: 70%;
+  height: 260px;
+  margin: 0 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.about-me {
+  display: none;
+}
+.about-me .cv-container {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  height: 93px;
+  width: 130px;
+  transform: translateX(-50%);
+  background-color: rgba(159, 184, 255, 0.1215686275);
+}
+.about-me .cv-container #button-CV {
+  height: 75px;
+  width: 100px;
+  top: 10px;
+  left: 15px;
+  font-family: auto;
+  position: relative;
+}
+
 .opacity {
   opacity: 15%;
+}
+
+.hide {
+  display: none;
 }
 
 @media screen and (max-width: 3841px) and (min-width: 1024px) {
@@ -11944,7 +12003,7 @@ textarea.form-control-lg {
     top: 20%;
     user-select: none;
   }
-  .features .featsmiddle-container .img-fluid {
+  .features .featsmiddle-container .container-img .img-fluid {
     margin-left: 3%;
     width: 5%;
   }
@@ -11995,22 +12054,52 @@ textarea.form-control-lg {
     border-radius: 16px;
     background-color: #2e53a5;
   }
+  .myprojects-carousel {
+    margin-right: 110px;
+    flex-direction: row;
+    position: relative;
+    top: 20px;
+  }
+  .myprojects-carousel .angular-project, .myprojects-carousel .node-project, .myprojects-carousel .python-project {
+    width: 30%;
+  }
+  .about-me .cv-container {
+    bottom: 31%;
+    height: 145px;
+    width: 152px;
+    transform: translateX(0);
+    left: 50px;
+  }
+  .about-me .cv-container #button-CV {
+    height: 125px;
+    width: 125px;
+    font-size: larger;
+    left: 14px;
+  }
 }
 @media screen and (min-width: 920px) and (max-width: 1023px) {
-  .flexbuttons-left {
+  .features .flexbuttons-left {
     left: 15%;
   }
 }
 @media screen and (max-width: 912px) and (min-width: 699px) {
-  .flexbuttons-left {
+  .features .flexbuttons-left {
     left: 10%;
+  }
+}
+@media screen and (max-width: 360px) {
+  .myprojects-carousel {
+    height: 330px;
   }
 }
 @media screen and (max-width: 336px) {
   .features .flexbuttons-top {
     flex-direction: column;
   }
-  .featsmiddle-description {
+  .features .featsmiddle-description {
     top: 65%;
+  }
+  .myprojects-carousel {
+    height: 275px;
   }
 }/*# sourceMappingURL=features.css.map */

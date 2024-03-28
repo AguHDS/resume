@@ -1,161 +1,270 @@
 @import '../../../node_modules/bootstrap/scss/bootstrap.scss';
 
 .features {
-    width: 80vw;
+  width: 80vw;
+  position: relative;
+  margin-top: 40px;
+  background-color: rgb(46, 22, 144);
+  border-radius: 23px;
+  height: 400px;
+  transform: translate(12%, 0%);
+  .initial-message {
+    color: white;
     position: relative;
-    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    top: 45%;
+    font-family: auto;
+    font-size: large;
+  }
+  .techs {
+    display: none;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+  }
+}
+
+.flexbuttons-top {
+  position: relative;
+  display: flex;
+  max-width: 100%;
+  button {
+    max-width: 100%;
+    width: -webkit-fill-available;
+    border-radius: 0px;
+    border: 1px solid black;
+  }
+}
+
+.featsmiddle-container {
+    height: 30%;
+    right: 0;
+    position: relative;
+    background-color: #1b075a;
+  .container-img {
+    position: absolute;
+    top: 10%;
+    .img-fluid {
+      width: 35px;
+    }
+  }
+}
+
+.featsmiddle-description {
+    width: 76%;
+    left: 12.6%;
+    
+    background-color: #1b075a;
+    top: 52%;
+    height: 9%;
+    position: absolute;
+}
+
+.flexbuttons-left {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    height: 9%;
+    max-width: 100%;
+  .btnLeft {
+    overflow: hidden;
+    margin-left: 2%;
+    margin-right: 2%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: -webkit-fill-available;
+    border-radius: 16px;
+    background-color: #2e53a5;
+  }
+}
+
+.myprojects-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+  flex-direction: column;
+ display: none; 
+}
+
+.angular-project, .node-project, .python-project {
+  background-color: red;
+  width: 70%;
+  height: 260px;
+  margin: 0 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.about-me {
+  display: none;
+  .cv-container {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    height: 93px;
+    width: 130px;
+    transform: translateX(-50%);
+    background-color: #9fb8ff1f;
+    #button-CV {
+      height: 75px;
+      width: 100px;
+      top: 10px;
+      left: 15px;
+      font-family: auto;
+      position: relative;
+    }
+  }
+}
+
+
+.opacity {
+  opacity: 15%;
+}
+
+.hide {
+  display: none;
+}
+
+// PC device
+@media screen and (max-width: 3841px) and (min-width: 1024px) {
+  .features {
+    width: 79vw;
+    position: relative;
     background-color: rgb(46, 22, 144);
-    border-radius: 23px;
+    border-radius: 30px;
     height: 400px;
-    transform: translate(12%, 0%);
-  
-    .flexbuttons-top {
-      position: relative;
-      display: flex;
-      max-width: 100%;
-      button {
-        max-width: 100%;
-        width: -webkit-fill-available;
-        border-radius: 0px;
-        border: 1px solid black;
-      }
-    }
+    box-shadow: inset 0px 0px 0px 10px #2e53a5;
+    transform: translate(13%, 0%);
   }
   
-  .featsmiddle-container {
-      height: 30%;
-      right: 0;
-      position: relative;
-      background-color: #1b075a;
-    .container-img {
-      position: absolute;
-      top: 10%;
-      .img-fluid {
-        width: 35px;
-      }
-    }
-  }
-  .featsmiddle-description {
-      width: 76%;
-      left: 12.6%;
-      
-      background-color: #1b075a;
-      top: 52%;
-      height: 9%;
-      position: absolute;
-  }
-  .flexbuttons-left {
-      position: absolute;
-      display: flex;
-      bottom: 0;
-      height: 9%;
-      max-width: 100%;
-    .btnLeft {
-      overflow: hidden;
-      margin-left: 2%;
-      margin-right: 2%;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      width: -webkit-fill-available;
-      border-radius: 16px;
-      background-color: #2e53a5;
-    }
-  }
-  
-  .opacity {
-    opacity: 15%;
+  .features .featsmiddle-container {
+    width: 56%;
+    top: 112px;
+    left: 22%;
+    height: 18%;
+    border-radius: 40px;
+    position: relative;
   }
 
-  //for PC device
-  @media screen and (max-width: 3841px) and (min-width: 1024px){
-    .features {
-      width: 79vw;
-      position: relative;
-      background-color: rgb(46, 22, 144);
-      border-radius: 30px;
-      height: 400px;
-      box-shadow: inset 0px 0px 0px 10px #2e53a5;
-      transform: translate(13%, 0%);
-      .featsmiddle-container {
-        width: 56%;
-        top: 112px;
-        left: 22%;
-        height: 18%;
-        border-radius: 40px;
-        position: relative;
-        .container-img {
-        position: relative;
-        top: 20%;
-        user-select: none;
-      }
-        .img-fluid {
-        margin-left: 3%;
-        width: 5%;
-      }
-      @media screen and (min-width: 2880px) and (max-width: 3840px) {
-      .container-img .img-fluid {
-          width: 3%;
-        }
-      }
+  .features .featsmiddle-container .container-img {
+    position: relative;
+    top: 20%;
+    user-select: none;
+  }
+
+  .features .featsmiddle-container .container-img .img-fluid {
+    margin-left: 3%;
+    width: 5%;
+  }
+
+  @media screen and (min-width: 2880px) and (max-width: 3840px) {
+    .features .featsmiddle-container .container-img .img-fluid {
+      width: 3%;
     }
-    .featsmiddle-description {
-        width: 51%;
-        left: 24.6%;
-        top: 59%;
-        height: 12%;
+  }
+
+  .features .featsmiddle-description {
+    width: 51%;
+    left: 24.6%;
+    top: 59%;
+    height: 12%;
+  }
+
+  .features .flexbuttons-right {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  .features .flexbuttons-right button {
+    border-radius: 0px;
+    height: -webkit-fill-available;
+    border: 1px solid #1f166e;
+    background-color: #2e53a5;
+  }
+
+  .features .flexbuttons-left {
+    display: flex;
+    width: 15%;
+    left: 1%;
+    width: 15%;
+    border-radius: 9%;
+    background-color: #1b075a;
+    height: 44%;
+    flex-direction: column;
+    transform: translate(0%, -62%);
+  }
+
+  .features .flexbuttons-left button {
+    overflow: hidden;
+    margin: 10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: -webkit-fill-available;
+    border-radius: 16px;
+    background-color: #2e53a5;
+  }
+
+  .myprojects-carousel {
+    margin-right: 110px;
+    flex-direction: row;
+    position: relative;
+    top: 20px;
+  
+    .angular-project, .node-project, .python-project {
+      width: 30%;
     }
-    .flexbuttons-right {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        button {
-        border-radius: 0px;
-        height: -webkit-fill-available;
-        border: 1px solid #1f166e;
-        background-color: #2e53a5;
-      }
-    }
-    .flexbuttons-left {
-      display: flex;
-      width: 15%;
-      left: 1%;
-      width: 15%;
-      border-radius: 9%;
-      background-color: #1b075a;
-      height: 44%;
-      flex-direction: column;
-      transform: translate(0%, -62%);
-        button {
-        overflow: hidden;
-        margin: 10px;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        width: -webkit-fill-available;
-        border-radius: 16px;
-        background-color: #2e53a5;
+  }
+
+  .about-me {
+    .cv-container {
+      bottom: 31%;
+      height: 145px;
+      width: 152px;
+      transform: translateX(0);
+      left: 50px;
+      #button-CV {
+        height: 125px;
+        width: 125px;
+        font-size: larger;
+        left: 14px;
       }
     }
   }
 }
+
+// mobile
 @media screen and (min-width: 920px) and (max-width: 1023px) {
-  .flexbuttons-left {
+  .features .flexbuttons-left {
     left: 15%;
   }
 }
+
 @media screen and (max-width: 912px) and (min-width: 699px) {
-    .flexbuttons-left {
-      left: 10%;
-    }
+  .features .flexbuttons-left {
+    left: 10%;
   }
- 
-  @media screen and (max-width: 336px) {
-    .features .flexbuttons-top {
-      flex-direction: column;
-    }
-    .featsmiddle-description {
-      top: 65%;
-    }
+}
+
+@media screen and (max-width: 360px) {
+  .myprojects-carousel {
+    height: 330px;
   }
+}
+
+@media screen and (max-width: 336px) {
+  .features .flexbuttons-top {
+    flex-direction: column;
+  }
+  .features .featsmiddle-description {
+    top: 65%;
+  }
+  .myprojects-carousel {
+    height: 275px;
+  }
+}

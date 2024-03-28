@@ -31,7 +31,7 @@ body {
         color: var(--bs-gray-400);
       }
       &:focus {
-        border: 1px solid white;
+        color: white;
       }
     }
   }
@@ -78,7 +78,6 @@ section.main {
     justify-content: left;
     align-items: center;
     border-radius: 9px;
-    box-shadow: 0 0 10px rgb(0, 0, 0);
     overflow: hidden;
 
     .carousel-control {
@@ -143,6 +142,12 @@ form {
   align-content: center;
   flex-wrap: wrap;
 }
+.warning-email {
+  margin: 0;
+  color: red;
+  display: none;
+}
+
 input[type="text"], input[type="email"] {
   height: 35px;
   padding-left: 10px;
@@ -163,7 +168,17 @@ textarea {
   justify-content: center;
   align-items: center;
 }
-input[type="submit"] {
+.disabled {
+  background-color: gray;
+  color: white;
+  padding: 9px;
+  border: none;
+  width: 50%;
+  margin-top: 30px;
+  border-radius: 20px;
+  pointer-events: none;
+}
+.active {
   background-color: #234389;
   color: white;
   padding: 9px;
@@ -172,17 +187,24 @@ input[type="submit"] {
   margin-top: 30px;
   border-radius: 20px;
   cursor: pointer;
-}
-input[type="submit"]:hover {
-  background-color: #1f3d7e;
+  &:hover {
+    background-color: #1f3d7e;
+  }
 }
 .footer-info {
   position: relative;
   top: 38px;
   color: #c5c5c5;
 }
+.captcha {
+  display: flex;
+  justify-content: center;
+  margin: 25px;
+  display: none;
+}
 
 // for PC device|
+
 @media screen and (max-width: 3841px) and (min-width: 1024px){
   .separator  img {
     width: 45%;
@@ -199,9 +221,10 @@ input[type="submit"]:hover {
     width: 12%;
   }
   .submit-container input{
-    width: 30%;
+    width: 24%;
   }
 }
+
 //for mobile
 @media screen and (max-width: 820px) {
   .content {
