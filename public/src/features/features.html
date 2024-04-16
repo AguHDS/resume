@@ -1,5 +1,16 @@
 <section class="features">
-  <div class="flex-buttons"></div>
+  <div class="flex-buttons">
+    <div class="flexbuttons-top">
+      <button type="button" class="btn btn-primary" id="btn-technologies-top" role="button" tabindex="0">Tecnologías</button>
+      <button type="button" class="btn btn-primary" id="btn-projects-top" role="button" tabindex="0">Proyectos</button>
+      <button type="button" class="btn btn-primary" id="btn-about-top" role="button" tabindex="0">Sobre mí</button>
+    </div>
+    <div class="flexbuttons-right">
+      <button type="button" class="btn btn-primary" id="btn-technologies-right" role="button" tabindex="0">Tecnologías</button>
+      <button type="button" class="btn btn-primary" id="btn-projects-right" role="button" tabindex="0">Proyectos</button>
+      <button type="button" class="btn btn-primary" id="btn-about-right" role="button" tabindex="0">Sobre mí</button>
+    </div>
+  </div>
   <div class="initial-message">Click en los botones para mas info!</div>
   <div class="techs">
     <div class="featsmiddle-container">
@@ -28,14 +39,52 @@
   </div>
   <div class="projects">
     <div class="myprojects-carousel">
+      <img src="../../images/arrow-slider.png" id="up-arrow" alt="arrow-slider" aria-label="arrow up slider" tabindex="0">
       <div class="angular-project"></div>
-      <div class="node-project"></div>
+      <div class="node-project">
+        <img src="../../images/node-wallpaper.jpg" class="project-img">
+        <p class="inner-text-up">Node Project</p><br>
+        <p class="inner-text-bot">coming soon!</p>
+      </div>
+      <p class="project-subtitltes">node, typescript, etc...</p>
       <div class="python-project"></div>
+      <img src="../../images/arrow-slider.png" id="down-arrow" alt="arrow-slider" aria-label="arrow down slider" tabindex="0">
     </div>
   </div>
   <div class="about-me">
+    <img src="../../images/arrow-slider.png" id="left-arrow" alt="arrow-slider" arial-label="arrow left slider" tabindex="0">
     <div class="cv-container">
-      <button type="button" class="btn btn-primary" id="button-CV" role="button">Descargar <br> CV</button>
+      <button type="button" class="btn btn-primary" id="button-CV" role="button" tabindex="0" aria-label="download CV">Descargar <br> CV</button>
     </div>
+    <div class="info-container">
+      <div class="left-info i-left">
+        <h3>Estudios</h3>
+        <div class="information">
+          <p>Secundario completo: Economía</p>
+          <p>Actualmente cursando tecnicatura de desarrollo de software (2do año)</p>
+          <p>Me capacito de forma individual con cursos y proyectos personales</p>
+          <p>Nivel de inglés: Avanzado</p>
+        </div>
+      </div>
+      <div class="mid-info i-mid">
+        <h3>Información personal</h3>
+        <div class="information">
+          <p>Nombre y apellido: Agustin Butti</p>
+          <p>Género: Masculino</p>
+          <p>Fecha de nacimiento: 19/06/1998</p>
+          <p>Pais y ciudad: Argentina - Rosario</p>
+          <p>Correo: agustinbutti-cs@hotmail.com</p>
+        </div>
+      </div>
+      <div class="right-info i-right">
+        <h3>Experiencia Laboral</h3>
+        <div class="information">
+          <p>Trabajé como desarrollador de software en Accenture</p>
+          <p>Fecha de ingreso: Noviembre 2020</p>
+          <p>Fecha de salida: Mayo 2023</p>
+        </div>
+      </div>
+    </div>
+    <img src="../../images/arrow-slider.png" id="right-arrow" alt="arrow-slider" arial-label="arrow right slider" tabindex="0">
   </div>
 </section>

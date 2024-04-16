@@ -11859,10 +11859,11 @@ textarea.form-control-lg {
   width: 80vw;
   position: relative;
   margin-top: 40px;
-  background-color: rgb(46, 22, 144);
+  background-color: rgb(30, 16, 108);
   border-radius: 23px;
   height: 400px;
   transform: translate(12%, 0%);
+  box-shadow: inset 0px 0px 0px 10px #170952;
 }
 .features .initial-message {
   color: white;
@@ -11870,9 +11871,11 @@ textarea.form-control-lg {
   display: flex;
   justify-content: center;
   margin: 10px;
-  top: 45%;
+  right: auto;
+  top: 40%;
   font-family: auto;
   font-size: large;
+  z-index: -1;
 }
 .features .techs {
   display: none;
@@ -11889,7 +11892,9 @@ textarea.form-control-lg {
   max-width: 100%;
   width: -webkit-fill-available;
   border-radius: 0px;
-  border: 1px solid black;
+  border: 1px solid #4c30eb;
+  background-color: #210d76;
+  color: white;
 }
 
 .featsmiddle-container {
@@ -11921,6 +11926,7 @@ textarea.form-control-lg {
   bottom: 0;
   height: 9%;
   max-width: 100%;
+  z-index: 1;
 }
 .flexbuttons-left .btnLeft {
   overflow: hidden;
@@ -11930,46 +11936,163 @@ textarea.form-control-lg {
   text-overflow: ellipsis;
   width: -webkit-fill-available;
   border-radius: 16px;
-  background-color: #2e53a5;
+  color: white;
+  background-color: #2c3281;
+  margin-bottom: 3px;
 }
 
-.myprojects-carousel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 350px;
-  flex-direction: column;
-  display: none;
+.angular-project {
+  bottom: 150px;
 }
 
-.angular-project, .node-project, .python-project {
-  background-color: red;
+.python-project {
+  top: 150px;
+}
+
+.projects {
   width: 70%;
+  overflow: hidden;
+  left: 44px;
+  height: 350px;
+  top: 49px;
+  position: absolute;
+}
+.projects .myprojects-carousel {
+  display: none;
+  flex-direction: column;
+  position: relative;
+  height: 443px;
+  top: -56px;
+  max-width: 100%;
+  left: 0;
+  width: 99%;
+}
+.projects .myprojects-carousel .angular-project, .projects .myprojects-carousel .node-project, .projects .myprojects-carousel .python-project {
+  background-color: #8a90b9;
   height: 260px;
-  margin: 0 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  position: relative;
 }
 
 .about-me {
   display: none;
+  max-width: 100%;
+  position: relative;
+  top: 7%;
 }
 .about-me .cv-container {
   position: absolute;
-  bottom: 10px;
+  bottom: -75px;
   left: 50%;
-  height: 93px;
+  height: 83px;
   width: 130px;
   transform: translateX(-50%);
-  background-color: rgba(159, 184, 255, 0.1215686275);
+  background-color: #170952;
 }
 .about-me .cv-container #button-CV {
-  height: 75px;
+  height: 66px;
   width: 100px;
   top: 10px;
   left: 15px;
   font-family: auto;
   position: relative;
+  background-color: #2c3281;
+}
+.about-me img {
+  position: absolute;
+  width: 30px;
+  top: 45%;
+}
+
+#right-arrow {
+  right: 0;
+  margin-right: 5px;
+}
+
+#left-arrow {
+  left: 0;
+  transform: scale(-1);
+  margin-left: 5px;
+}
+
+#up-arrow {
+  top: 14%;
+  transform: rotate(270deg);
+  position: fixed;
+  left: 45%;
+  width: 30px;
+}
+
+#down-arrow {
+  bottom: 5%;
+  transform: rotate(90deg);
+  position: fixed;
+  left: 45%;
+  width: 30px;
+}
+
+.info-container {
+  flex: auto;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  max-width: 100%;
+  height: 250px;
+  justify-content: center;
+}
+.info-container ::-webkit-scrollbar {
+  width: 0px;
+  height: 6px;
+}
+.info-container ::-webkit-scrollbar-thumb {
+  background-color: cyan;
+  border-radius: 6px;
+}
+.info-container .left-info, .info-container .mid-info, .info-container .right-info {
+  color: white;
+  overflow: auto;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(23, 9, 82);
+  position: relative;
+  white-space: nowrap;
+  border-radius: 5px;
+  overflow: scroll;
+  top: 35px;
+  width: 70%;
+}
+.info-container .left-info h3, .info-container .left-info .h3, .info-container .mid-info h3, .info-container .mid-info .h3, .info-container .right-info h3, .info-container .right-info .h3 {
+  margin-bottom: 15px;
+  margin-top: 5px;
+  color: cyan;
+  padding-bottom: 5px;
+  width: 238px;
+  display: flex;
+  border: 1px dashed cyan;
+  justify-content: center;
+  margin-left: 15px;
+}
+.info-container .left-info p, .info-container .mid-info p, .info-container .right-info p {
+  margin-bottom: 5px;
+  white-space: nowrap;
+  margin-left: 5px;
+  color: cyan;
+}
+
+.info-container .left-info {
+  margin-right: 5px;
+  width: 100%;
+  right: 80px;
+}
+
+.info-container .i-mid {
+  width: 1500px;
+}
+
+.info-container .right-info {
+  margin-left: 5px;
+  width: 100%;
+  left: 80px;
 }
 
 .opacity {
@@ -11977,18 +12100,21 @@ textarea.form-control-lg {
 }
 
 .hide {
-  display: none;
+  display: none !important;
 }
 
 @media screen and (max-width: 3841px) and (min-width: 1024px) {
   .features {
     width: 79vw;
     position: relative;
-    background-color: rgb(46, 22, 144);
+    background-color: rgb(30, 16, 108);
     border-radius: 30px;
     height: 400px;
-    box-shadow: inset 0px 0px 0px 10px #2e53a5;
     transform: translate(13%, 0%);
+  }
+  .features .initial-message {
+    right: 1%;
+    top: 48%;
   }
   .features .featsmiddle-container {
     width: 56%;
@@ -11999,12 +12125,13 @@ textarea.form-control-lg {
     position: relative;
   }
   .features .featsmiddle-container .container-img {
+    display: flex;
     position: relative;
     top: 20%;
     user-select: none;
   }
   .features .featsmiddle-container .container-img .img-fluid {
-    margin-left: 3%;
+    margin-left: 3.8%;
     width: 5%;
   }
 }
@@ -12031,8 +12158,7 @@ textarea.form-control-lg {
   .features .flexbuttons-right button {
     border-radius: 0px;
     height: -webkit-fill-available;
-    border: 1px solid #1f166e;
-    background-color: #2e53a5;
+    background-color: #210d76;
   }
   .features .flexbuttons-left {
     display: flex;
@@ -12044,6 +12170,7 @@ textarea.form-control-lg {
     height: 44%;
     flex-direction: column;
     transform: translate(0%, -62%);
+    z-index: 1;
   }
   .features .flexbuttons-left button {
     overflow: hidden;
@@ -12052,29 +12179,159 @@ textarea.form-control-lg {
     text-overflow: ellipsis;
     width: -webkit-fill-available;
     border-radius: 16px;
-    background-color: #2e53a5;
+    background-color: #2c3281;
   }
-  .myprojects-carousel {
-    margin-right: 110px;
+  .projects {
+    width: 81%;
+    overflow: hidden;
+    left: 98px;
+    top: 25px;
+    position: absolute;
+  }
+  .projects .myprojects-carousel {
     flex-direction: row;
     position: relative;
-    top: 20px;
+    max-width: 100%;
+    top: 45px;
+    height: 90%;
+    left: 0;
   }
-  .myprojects-carousel .angular-project, .myprojects-carousel .node-project, .myprojects-carousel .python-project {
-    width: 30%;
+  .projects .myprojects-carousel .angular-project, .projects .myprojects-carousel .node-project, .projects .myprojects-carousel .python-project {
+    width: 100%;
+  }
+  .projects .myprojects-carousel .project-img {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    opacity: 40%;
+    text-align: center;
+  }
+  .projects .myprojects-carousel .inner-text-up {
+    color: white;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    font-size: 45px;
+    white-space: nowrap;
+    font-family: auto;
+    left: 25%;
+    right: 25%;
+    margin: 0;
+  }
+  .projects .myprojects-carousel .inner-text-bot {
+    color: white;
+    position: absolute;
+    left: 25%;
+    bottom: 0;
+    right: 25%;
+    display: flex;
+    justify-content: center;
+    white-space: nowrap;
+    font-size: 24px;
+    font-family: auto;
+    margin: 0;
+  }
+  .projects .myprojects-carousel .project-subtitltes {
+    color: #8c9ffd;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 10px;
+    font-family: math;
+    text-align: center;
+  }
+  .projects .myprojects-carousel .angular-project {
+    position: relative;
+    right: 430px;
+    top: 0;
+  }
+  .projects .myprojects-carousel .python-project {
+    position: relative;
+    left: 430px;
+    top: 0;
+  }
+  .projects .myprojects-carousel #up-arrow {
+    transform: rotate(-180deg);
+    margin-top: 0;
+    position: fixed;
+    left: 7%;
+    top: 50%;
+    pointer-events: all;
+    cursor: pointer;
+  }
+  .projects .myprojects-carousel #down-arrow {
+    transform: rotate(360deg);
+    margin-top: 0;
+    position: fixed;
+    right: 0;
+    top: 50%;
+    left: 80%;
+    pointer-events: all;
+    cursor: pointer;
+  }
+  .about-me {
+    max-width: 92%;
+  }
+  .about-me .left-info, .about-me .mid-info, .about-me .right-info {
+    top: 78px;
+    height: 246px;
+    width: 366px;
+    border: 1px dashed cyan;
+  }
+  .about-me .left-info h3, .about-me .left-info .h3, .about-me .mid-info h3, .about-me .mid-info .h3, .about-me .right-info h3, .about-me .right-info .h3 {
+    margin-left: 25px;
+    width: 85%;
+  }
+  .about-me .info-container {
+    height: 392px;
+    justify-content: flex-start;
+    position: relative;
+    left: 16%;
+    max-width: 82%;
+    bottom: 20px;
+  }
+  .about-me .info-container .left-info {
+    left: 1px;
+  }
+  .about-me .info-container .mid-info {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .about-me .info-container .right-info {
+    left: 0;
   }
   .about-me .cv-container {
     bottom: 31%;
     height: 145px;
     width: 152px;
-    transform: translateX(0);
-    left: 50px;
+    left: 8%;
   }
   .about-me .cv-container #button-CV {
     height: 125px;
     width: 125px;
     font-size: larger;
     left: 14px;
+  }
+  .about-me img {
+    display: none;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1320px) {
+  .features .about-me {
+    max-width: 89%;
+  }
+  .features .about-me .cv-container {
+    height: 121px;
+    width: 115px;
+    left: 9%;
+  }
+  .features .about-me .cv-container #button-CV {
+    height: 101px;
+    overflow: hidden;
+    width: 83px;
+    left: 13px;
   }
 }
 @media screen and (min-width: 920px) and (max-width: 1023px) {
@@ -12092,6 +12349,15 @@ textarea.form-control-lg {
     height: 330px;
   }
 }
+@media screen and (max-width: 365px) {
+  .about-me .cv-container {
+    height: 69px;
+    bottom: -55px;
+  }
+  .about-me .cv-container #button-CV {
+    height: 58px;
+  }
+}
 @media screen and (max-width: 336px) {
   .features .flexbuttons-top {
     flex-direction: column;
@@ -12101,5 +12367,12 @@ textarea.form-control-lg {
   }
   .myprojects-carousel {
     height: 275px;
+  }
+  .about-me .cv-container {
+    height: 76px;
+    bottom: 201px;
+  }
+  .about-me .cv-container #button-CV {
+    height: 52px;
   }
 }/*# sourceMappingURL=features.css.map */

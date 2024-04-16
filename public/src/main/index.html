@@ -24,10 +24,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <h2 class="nav-link px-lg-4" href="#" role="about" aria-label="About me" tabindex="0">Sobre mi</h2>
+            <h2 class="nav-link px-lg-4" id="aboutMe-mainButton" href="#" role="about" aria-label="About me" tabindex="0">Sobre mi</h2>
           </li>
           <li class="nav-item">
-            <h2 class="nav-link px-lg-4" href="#" role="projects" aria-label="My projects" tabindex="0">Proyectos</h2>
+            <h2 class="nav-link px-lg-4" id="projects-mainbutton" href="#" role="projects" aria-label="My projects" tabindex="0">Proyectos</h2>
           </li>
           <li class="nav-item">
             <h2 class="nav-link px-lg-4" id="contact" href="#" role="contact" aria-label="Contact me" tabindex="0">Contacto</h2>
@@ -98,14 +98,14 @@
           <label for="from_name">Nombre:</label>
           <input type="text" id="from_name" name="from_name" placeholder="Tu nombre" required>
           
-          <label for="email_id">Email:</label><input type="text" id="email_id" name="email_id" placeholder="Tu email" required>
+          <label for="email_id">Email:</label><input type="text" id="email_id" name="email_id" placeholder="Tu email" aria-describedby="warning-email" required>
           <p class="warning-email">usa un email válido</p>
 
           <label for="message">Mensaje:</label>
           <textarea id="message" name="message" rows="4" placeholder="Mensaje" required></textarea>
   
           <div class="submit-container">
-            <input type="submit" class="disabled" id="button" value="Enviar" disabled="true">
+            <input type="submit" class="disabled" id="button" value="Enviar" aria-label="send message" disabled="true">
           </div>
           <div class="captcha">
             <div class="g-recaptcha" id="recaptcha-id" data-sitekey="6LcI5aUpAAAAALyPrLPOVEZhismyb_XvPtYAKCbf" data-callback="recaptchaCallback"></div>

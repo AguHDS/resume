@@ -5,13 +5,17 @@ implementar para el CEO La redireccion 301
 
 .correr watch sass abajo a la derecha para detectar cambios
 
+boostrap elimino jquery de su codigo, investigar eso para usar boostrap sin jquery
+
 abajo de eso poner un mini history explicando cuales uso, practico, etc..... cuando se clickee el boton
 
 usar variable global para tapar la key en el head del html
 
+separar los textos español y ingles en archivos json para ponerlos dinamicamente, ya que si lo hago desde el codigo con textcontent se reemplazara el otro texto anterior y tendria que volver a hacer lo mismo para poner el anterior cuando se vuelva a cambiar
+
 validar que en el form los campos esten completos antes de enviar el formulario, hacer esto desde el lado del servidor usando node
 porque ahora mismo pueden quitar el required desde inspeccionar y mandar el formulario incompleto
 
-getFeatures().. se ejecuta cada vez que apreto un boton o paso a mobile, deberia ejecutarse solo una vez que es cuando el html dinamico se poner
-hay problema relacionad con waitForFeatures() en features.js, el await hace que se ejecute varias veces la promesa de getFeatures() 
-o cuando se le llama a waitForFeatures() con .then().
+utilizar cartel para que el usuario permita cookies de terceros, porque emailjs necesita esas cookies y lo prueba en consola
+
+el scroll de os botones de arriba no funciona cuando se usa la rueda del raton para subir despues de scrollear con la funcion

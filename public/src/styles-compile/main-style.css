@@ -11867,7 +11867,7 @@ body {
 }
 
 .navbar {
-  background-color: rgb(33, 58, 149);
+  background-color: rgb(30, 16, 108);
   box-shadow: 0 0 10px;
 }
 .navbar .navbar-brand {
@@ -11899,6 +11899,7 @@ body {
   width: 200px;
   margin: auto;
   display: block;
+  user-select: none;
 }
 .main h5, .main .h5 {
   line-height: 1;
@@ -11962,6 +11963,7 @@ section.main {
   text-align: center;
   display: block;
   margin: auto;
+  user-select: none;
   width: 80%;
 }
 
