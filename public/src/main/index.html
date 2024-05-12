@@ -8,118 +8,135 @@
     <link rel="stylesheet" type="text/css" href="/src/styles-compile/main-style.css">
     <link rel="stylesheet" type="text/css" href="/src/styles-compile/features.css">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">emailjs.init('SJQ2I1DV2Xo4GqIUG')</script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar fixed-top text-uppercase w-100">
-      <div class="container">
+    <div class="container">
       <h1 class="navbar-brand font-weight-bold" href="#" title="brand" aria-label="Presentation" tabindex="0">Presentación</h1>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <h2 class="nav-link px-lg-4" id="aboutMe-mainButton" href="#" role="about" aria-label="About me" tabindex="0">Sobre mi</h2>
+            <a class="nav-link px-lg-4" id="aboutMe-mainButton" href="#" role="about" aria-label="About me" tabindex="0">Sobre mi</a>
           </li>
           <li class="nav-item">
-            <h2 class="nav-link px-lg-4" id="projects-mainbutton" href="#" role="projects" aria-label="My projects" tabindex="0">Proyectos</h2>
+            <a class="nav-link px-lg-4" id="projects-mainbutton" href="#" role="projects" aria-label="My projects" tabindex="0">Proyectos</a>
           </li>
           <li class="nav-item">
-            <h2 class="nav-link px-lg-4" id="contact" href="#" role="contact" aria-label="Contact me" tabindex="0">Contacto</h2>
+            <a class="nav-link px-lg-4" id="contact" href="#" role="contact" aria-label="Contact me" tabindex="0">Contacto</a>
           </li>
         </ul>
       </div>
-      </div>
-    </nav>
-    <section class="main">  
-      <div class="container">
-          <div class="row py-2">
-              <div class="col-lg-6 py-5 text-center">
-                  <h3 title="name" aria-label="My name" tabindex="0">Prueba xd</h3>
-                  <img src="../images/profile.png" alt="Profile image" tabindex="0">
-                  <h5 title="subtext" aria-label="Subtext" tabindex="0">Software developer</h5>
-              </div>
-          </div>
-      </div>
-    </section>
-    <div class="content" title="carousel" aria-label="carousel with images" tabindex="0">
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active c-item">
-            <img class="d-block w-100 c-img" src="../images/webdev.png" alt="Web development - front and backend">
-            <div class="carousel-caption" aria-labelledby="carousel-heading" aria-describedby="carousel-description">
-              <h5>Web development</h5>
-              <p>Front/back end</p>
+      <div class="custom-select">
+        <div class="select-img">
+          <img src="../../images/language-icon.png" alt="Language change icon">
+          <p id="lan-text">LAN</p>
+        </div>
+        <select class="language-select" aria-label="Language select">
+          <option class="language-opt" data-language="es">Español</option>
+          <option class="language-opt" data-language="en">English</option>
+        </select>
+      </div>     
+    </div>
+  </nav>
+  
+  <section class="main">
+    <div class="text-center">
+      <h3 title="name" aria-label="My name" tabindex="0">Agustin Butti</h3>
+      <img src="../images/profile.png" alt="Profile image" tabindex="0">
+      <h5 title="subtext" aria-label="Subtext" tabindex="0">Software developer</h5>
+    </div>
+  </section>
+
+  <div class="sliders" id="slider">
+    <input type="radio" name="slider" id="slide1" checked>
+    <input type="radio" name="slider" id="slide2">
+    <input type="radio" name="slider" id="slide3">
+    <div id="slides">
+      <div id="overflow">
+        <img src="../../images/arrow-slider.png" id="left-slidearrow" alt="arrow slider" aria-label="arrow up slider" tabindex="0">
+        <div class="inner">
+          <div class="slide slide_1">
+            <div class="slide-content">
+              <h1>Responsive web design</h1>
+              <h6>trabajo con enfoque mobile first</h6>
             </div>
           </div>
-          <div class="carousel-item c-item">
-            <img class="d-block w-100 c-img" src="../images/responsive.png" alt="Adaptable design - Mobile first">
-            <div class="carousel-caption" aria-labelledby="carousel-heading" aria-describedby="carousel-description">
-              <h5>Responsive design</h5>
-              <p>Mobile first methods</p>
+          <div class="slide slide_2">
+            <div class="slide-content">
+              <h1>Accessibility principles</h1>
+              <h6>aplico los fundamentos básicos</h6>
             </div>
           </div>
-          <div class="carousel-item c-item">
-            <img class="d-block w-100 c-img" src="../images/webaccess.png" alt="Accessibility principles">
-            <div class="carousel-caption" aria-labelledby="carousel-heading" aria-describedby="carousel-description">
-              <h5>Accessibility</h5>
-              <p>Understanding of accessibility principles</p>
+          <div class="slide slide_3">
+            <div class="slide-content">
+              <h2>Constant learning</h2>
+              <h6>hago proyectos para mantenerme actualizado</h6>
             </div>
           </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" data-slide="prev" role="button" aria-label="Previous" tabindex="0">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only"></span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" data-slide="next" role="button" aria-label="Next" tabindex="0">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only"></span>
-        </a>
+        <img src="../../images/arrow-slider.png" id="right-slidearrow" alt="arrow slider" aria-label="arrow up slider" tabindex="0">
       </div>
     </div>
-    <div class="text-center">
-      <h1 title="features" aria-label="My features" tabindex="0">Características</h1><br>
+    <div id="bullets">
+      <label for="slide1"></label>
+      <label for="slide2"></label>
+      <label for="slide3"></label>
     </div>
-    <div class="separator" id="sep-1" role="separator" aria-label="Section separator" tabindex="0">
-      <img alt="separator image" src="../images/divider.png">
-    </div>
-    <div class="dynamic-feats" tabindex="0"></div>
-    <div class="separator" id="sep-2" role="separator" aria-label="Section separator" tabindex="0">
-      <img alt="separator image" src="../images/divider.png">
-    </div>
-    <footer class="contact-form">
-      <h2>Contáctame</h2>
-      <form id="form">
-          <label for="from_name">Nombre:</label>
-          <input type="text" id="from_name" name="from_name" placeholder="Tu nombre" required>
-          
-          <label for="email_id">Email:</label><input type="text" id="email_id" name="email_id" placeholder="Tu email" aria-describedby="warning-email" required>
-          <p class="warning-email">usa un email válido</p>
+  </div>
 
-          <label for="message">Mensaje:</label>
-          <textarea id="message" name="message" rows="4" placeholder="Mensaje" required></textarea>
-  
-          <div class="submit-container">
-            <input type="submit" class="disabled" id="button" value="Enviar" aria-label="send message" disabled="true">
-          </div>
-          <div class="captcha">
-            <div class="g-recaptcha" id="recaptcha-id" data-sitekey="6LcI5aUpAAAAALyPrLPOVEZhismyb_XvPtYAKCbf" data-callback="recaptchaCallback"></div>
-          </div>
-          
-      </form>
+  <div class="text-center">
+    <h1 title="features" aria-label="My features" tabindex="0">Características</h1><br>
+  </div>
+
+  <div class="separator" id="sep-1" role="separator" aria-label="Section separator" tabindex="0">
+    <img alt="separator image" src="../images/divider.png">
+  </div>
+
+  <div class="dynamic-feats" tabindex="0"></div>
+
+  <div class="separator" id="sep-2" role="separator" aria-label="Section separator" tabindex="0">
+    <img alt="separator image" src="../images/divider.png">
+  </div>
+
+  <footer class="contact-form">
+    <h2>Contáctame</h2>
+    <form id="form">
+      <label for="from_name">Nombre:</label>
+      <input type="text" id="from_name" name="from_name" placeholder="Tu nombre" required>
+            
+      <label for="email_id">Email:</label>
+      <input type="text" id="email_id" name="email_id" placeholder="Tu email" aria-describedby="warning-email" required>
+      <p class="warning-email" id="warning-email">usa un email válido</p>
+
+      <label for="message">Mensaje:</label>
+      <textarea id="message" name="message" rows="4" placeholder="Mensaje" required></textarea>
+    
+      <div class="submit-container">
+        <input type="submit" class="disabled" id="button" value="Enviar" aria-label="send message" disabled="true">
+      </div>
+      <div class="captcha">
+        <div class="g-recaptcha" id="recaptcha-id" data-sitekey="6LcI5aUpAAAAALyPrLPOVEZhismyb_XvPtYAKCbf" data-callback="recaptchaCallback"></div>
+      </div>          
+    </form>
     <div class="footer-info">
-      <p>También podés contactarme por whatsapp: <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
-        <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
-      </svg> +54 9 341-3189431</p>
+      <p>También podés contactarme por whatsapp: 
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+          <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+        </svg> +54 9 341-3189431
+      </p>
     </div>
   </footer>
-
-    <script src="/src/main/main.js" type="module"></script>
-    <script src="/src/features/features.js" type="module"></script>
+  
+  <script src="/src/main/main.js" type="module"></script>
+  <script src="/src/features/features.js" type="module"></script>
+  <script src="/src/features/features-mobile.js" type="module"></script>
 </body>
 </html>

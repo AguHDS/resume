@@ -1,10 +1,8 @@
 'use strict'
-
 let feats = document.querySelector('.dynamic-feats');
 
-
 export const getFeatures = () => {
-  console.log('enviando la request') //quitar eso despues okkk
+  console.log('Sending request...'); //checking if the promise is only completing once, and not multiple times
   const features = './src/features/features.html';
   
   return fetch(features)
@@ -16,7 +14,7 @@ export const getFeatures = () => {
     })
     .then(html => {
       feats.innerHTML = html;
-      console.log('se puso el HTML') //quitar eso despues
+      console.log('Request fulfilled'); //checking if the promise is only completing once, and not multiple times
     })
     .catch(error => {
       console.error('There was a problem with the fetch operation:', error);
@@ -24,29 +22,70 @@ export const getFeatures = () => {
     });
 };
 
-const navButtons = ['contact', 'aboutMe-mainButton', 'projects-mainbutton'];
-const setupNavButtons = () => {
-  
-  const aboutMe_features_T = document.getElementById('btn-about-top'); //pendiente arreglar esto que el scroll se rompe es una mierda....
-  const project_features_R = document.getElementById('btn-projects-right');
-  const project_features_T = document.getElementById('btn-projects-top');
+const scrollNavButtons = () => {
+  const navButtons = ['contact', 'aboutMe-mainButton', 'projects-mainbutton'];
 
-  navButtons.forEach((id)=> {
+  navButtons.forEach((id) => {
     let button = document.getElementById(id);
-    button.addEventListener('click', (event)=>{
-      const targetElement = document.getElementById('btn-about-right');
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    })
-  })
-}
+    button.addEventListener('click', (e) => {
+      let btn = e.target.id; 
+      if(btn.includes('contact')) {
+        window.scrollTo({
+          top: document.documentElement.scrollHeight,
+          behavior: 'auto'
+        });
+      }else {
+        window.scrollTo({
+          top: 740,
+          behavior: 'auto'
+        });
 
-setupNavButtons();
+        if(btn.includes('aboutMe-mainButton')) {
+          const aboutButtonR = document.getElementById('btn-about-right');
+          const aboutButtonT = document.getElementById('btn-about-top');
+          aboutButtonR.click();
+          aboutButtonT.click();
+        }else {
+          const projectsButtonR = document.getElementById('btn-projects-right');
+          const projectButtonT = document.getElementById('btn-projects-top');
+          projectButtonT.click();
+          projectsButtonR.click();
+        }
+      }
+    });
+  });
+};
+scrollNavButtons();
+
+const L_sliderArrow = document.getElementById('left-slidearrow');
+const R_sliderArrow = document.getElementById('right-slidearrow');
+const sliders = document.querySelector('.sliders').children;
+const slidersArray = [...sliders].slice(0, 3);
+let index = 0;
+
+const sliderArrows = (e) => {
+  let id = e.target.id;
+  
+  if (id.includes('right')) {
+    index++;
+    if (index >= slidersArray.length) {
+      index = 0;
+    }
+  } else {
+    index--;
+    if (index < 0) {
+      index = slidersArray.length - 1;
+    }
+  }
+  
+  slidersArray.forEach(slider => slider.checked = false);
+  slidersArray[index].checked = true;
+};
+[R_sliderArrow, L_sliderArrow].forEach(el => el.addEventListener('click', sliderArrows));
 
 const btn = document.getElementById('button');
 
-const recaptchaCallback = ()=> { //hacer esto con node (desde el servidor) para evitar la manipulacion desde el frontend inspeccionando
+const recaptchaCallback = ()=> { //hacer esto con node (desde el servidor) para evitar la manipulacion desde el frontend inspeccionando la página
   btn.classList.remove('disabled');
   btn.classList.add('active');
   btn.disabled = false;
@@ -82,23 +121,6 @@ document.getElementById('form').addEventListener('submit', function(e) {
   }
 });
 
-
-
-
-/* $aboutMe.on('click', ()=> {
-    
-const aboutMe_features = $('#btn-about-right');
-  window.scrollTo({
-    top: 900,
-    behavior: 'smooth'
-  });
-  if (aboutMe_features) {
-    aboutMe_features.click();
-  } else {
-    console.error("El elemento 'btn-about-right' no existe.");
-  }
-}); */
-
 const checkFields = ()=> {
   const captchaDiv = document.querySelector('.captcha');
   const fields = ['from_name', 'email_id', 'message'].map(e => document.getElementById(e));
@@ -109,7 +131,6 @@ const checkFields = ()=> {
   } else {
     captchaDiv.style.display = 'none';
   }
-  return fields
+  return fields; //averiguar como funciona este return solo con fields y no con fieldsvalues, por que se tiene que retornar para que funcione? por que tiene quer etornarse fields y no la ultima variable?
 };
-
 checkFields().forEach(e => e.addEventListener('input', checkFields));

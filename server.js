@@ -2,6 +2,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+
 app.use(express.json());
 app.use(express.urlencoded({extended: false})); //false: uses querystring to work with simples urls. 
                                                 //true: uses qs to work with complex urls. ex: /?users[09]=Var&age=16&{ex: "ex"}

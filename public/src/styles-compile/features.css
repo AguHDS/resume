@@ -11864,6 +11864,7 @@ textarea.form-control-lg {
   height: 400px;
   transform: translate(12%, 0%);
   box-shadow: inset 0px 0px 0px 10px #170952;
+  overflow: hidden;
 }
 .features .initial-message {
   color: white;
@@ -11911,21 +11912,48 @@ textarea.form-control-lg {
   width: 35px;
 }
 
-.featsmiddle-description {
-  width: 76%;
-  left: 12.6%;
-  background-color: #1b075a;
-  top: 52%;
-  height: 9%;
+.featsmiddle-technames {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
   position: absolute;
+  font-size: 12px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.featsmiddle-technames #tech-names {
+  width: auto;
+  height: auto;
+  color: #81b1f7;
+  font-family: auto;
+}
+
+.featsmiddle-description {
+  width: auto;
+  display: flex;
+  height: auto;
+  justify-content: center;
+  top: 15%;
+  overflow: scroll;
+  position: relative;
+  transition: height 20s ease;
+}
+.featsmiddle-description #description-text {
+  color: white;
+  white-space: pre-line;
+  margin-left: 6px;
+  text-align: center;
+  margin-right: 6px;
+  background-color: #1b075a;
+  font-family: serif;
 }
 
 .flexbuttons-left {
   position: absolute;
   display: flex;
+  width: 100%;
   bottom: 0;
   height: 9%;
-  max-width: 100%;
   z-index: 1;
 }
 .flexbuttons-left .btnLeft {
@@ -11942,7 +11970,7 @@ textarea.form-control-lg {
 }
 
 .angular-project {
-  bottom: 150px;
+  top: -150px;
 }
 
 .python-project {
@@ -11950,49 +11978,85 @@ textarea.form-control-lg {
 }
 
 .projects {
-  width: 70%;
+  width: 100%;
   overflow: hidden;
-  left: 44px;
-  height: 350px;
-  top: 49px;
-  position: absolute;
+  display: flex;
+  height: -webkit-fill-available;
+  position: relative;
+  flex-direction: column;
+  user-select: none;
 }
 .projects .myprojects-carousel {
   display: none;
   flex-direction: column;
-  position: relative;
-  height: 443px;
-  top: -56px;
-  max-width: 100%;
+  position: absolute;
+  height: 90%;
+  top: 0;
   left: 0;
-  width: 99%;
+  transition: top 0.5s ease;
+  width: 100%;
+  justify-content: center;
 }
 .projects .myprojects-carousel .angular-project, .projects .myprojects-carousel .node-project, .projects .myprojects-carousel .python-project {
   background-color: #8a90b9;
-  height: 260px;
+  display: flex;
   position: relative;
+  left: 13%;
+  width: 80%;
+  text-wrap: nowrap;
+}
+.projects .myprojects-carousel .angular-project img, .projects .myprojects-carousel .node-project img, .projects .myprojects-carousel .python-project img {
+  opacity: 40%;
+}
+.projects .myprojects-carousel .project-subtitltes-nod, .projects .myprojects-carousel .project-subtitltes-side {
+  opacity: 100%;
+  display: none;
+}
+.projects .myprojects-carousel .inner-text-up {
+  display: flex;
+  color: rgb(222, 222, 222);
+  position: absolute;
+  justify-content: center;
+  text-align: center;
+  left: 25%;
+  font-size: 24px;
+  font-family: auto;
+  right: 25%;
+  margin: 0;
+}
+.projects .myprojects-carousel .inner-text-bot {
+  display: flex;
+  color: rgb(222, 222, 222);
+  position: absolute;
+  justify-content: center;
+  text-align: center;
+  left: 25%;
+  font-size: 24px;
+  margin: 0;
+  font-family: auto;
+  right: 25%;
+  white-space: nowrap;
+  bottom: 0;
+}
+.projects .myprojects-carousel img {
+  display: flex;
+  width: 100%;
 }
 
 .about-me {
   display: none;
-  max-width: 100%;
   position: relative;
-  top: 7%;
+  top: -400px;
 }
 .about-me .cv-container {
   position: absolute;
-  bottom: -75px;
-  left: 50%;
-  height: 83px;
-  width: 130px;
-  transform: translateX(-50%);
-  background-color: #170952;
+  display: flex;
+  justify-content: center;
+  top: 289px;
+  width: 100%;
+  overflow: hidden;
 }
 .about-me .cv-container #button-CV {
-  height: 66px;
-  width: 100px;
-  top: 10px;
-  left: 15px;
   font-family: auto;
   position: relative;
   background-color: #2c3281;
@@ -12005,13 +12069,19 @@ textarea.form-control-lg {
 
 #right-arrow {
   right: 0;
-  margin-right: 5px;
+  top: 200px;
+  position: fixed;
+  margin-right: 10px;
+  z-index: 1;
 }
 
 #left-arrow {
   left: 0;
+  top: 200px;
+  position: fixed;
   transform: scale(-1);
-  margin-left: 5px;
+  margin-left: 10px;
+  z-index: 1;
 }
 
 #up-arrow {
@@ -12020,6 +12090,7 @@ textarea.form-control-lg {
   position: fixed;
   left: 45%;
   width: 30px;
+  z-index: 1;
 }
 
 #down-arrow {
@@ -12028,38 +12099,30 @@ textarea.form-control-lg {
   position: fixed;
   left: 45%;
   width: 30px;
+  z-index: 1;
 }
 
 .info-container {
-  flex: auto;
   display: flex;
-  flex-direction: row;
+  overflow: hidden;
+  top: 50px;
+  position: relative;
+  flex: auto;
   overflow: hidden;
   max-width: 100%;
   height: 250px;
   justify-content: center;
 }
-.info-container ::-webkit-scrollbar {
-  width: 0px;
-  height: 6px;
-}
-.info-container ::-webkit-scrollbar-thumb {
-  background-color: cyan;
-  border-radius: 6px;
-}
 .info-container .left-info, .info-container .mid-info, .info-container .right-info {
   color: white;
-  overflow: auto;
   height: 200px;
   display: flex;
   flex-direction: column;
   background-color: rgb(23, 9, 82);
   position: relative;
   white-space: nowrap;
-  border-radius: 5px;
   overflow: scroll;
-  top: 35px;
-  width: 70%;
+  border: 2px solid cyan;
 }
 .info-container .left-info h3, .info-container .left-info .h3, .info-container .mid-info h3, .info-container .mid-info .h3, .info-container .right-info h3, .info-container .right-info .h3 {
   margin-bottom: 15px;
@@ -12068,7 +12131,7 @@ textarea.form-control-lg {
   padding-bottom: 5px;
   width: 238px;
   display: flex;
-  border: 1px dashed cyan;
+  border: 1px solid cyan;
   justify-content: center;
   margin-left: 15px;
 }
@@ -12078,21 +12141,37 @@ textarea.form-control-lg {
   margin-left: 5px;
   color: cyan;
 }
+.info-container ::-webkit-scrollbar {
+  width: 0px;
+  height: 9px;
+}
+.info-container ::-webkit-scrollbar-thumb {
+  background-color: cyan;
+  border-radius: 6px;
+}
+.info-container ::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(0, 228, 228);
+}
+.info-container ::-webkit-scrollbar-thumb:active {
+  background-color: rgb(0, 190, 190);
+}
 
 .info-container .left-info {
-  margin-right: 5px;
-  width: 100%;
-  right: 80px;
+  top: 15px;
+  width: 70%;
+  position: absolute;
 }
 
 .info-container .i-mid {
-  width: 1500px;
+  top: 15px;
+  height: auto;
+  width: 70%;
+  position: absolute;
 }
 
 .info-container .right-info {
-  margin-left: 5px;
-  width: 100%;
-  left: 80px;
+  width: 70%;
+  position: absolute;
 }
 
 .opacity {
@@ -12121,7 +12200,6 @@ textarea.form-control-lg {
     top: 112px;
     left: 22%;
     height: 18%;
-    border-radius: 40px;
     position: relative;
   }
   .features .featsmiddle-container .container-img {
@@ -12129,6 +12207,7 @@ textarea.form-control-lg {
     position: relative;
     top: 20%;
     user-select: none;
+    z-index: 1;
   }
   .features .featsmiddle-container .container-img .img-fluid {
     margin-left: 3.8%;
@@ -12142,10 +12221,25 @@ textarea.form-control-lg {
 }
 @media screen and (max-width: 3841px) and (min-width: 1024px) {
   .features .featsmiddle-description {
-    width: 51%;
+    max-width: 51%;
     left: 24.6%;
-    top: 59%;
-    height: 12%;
+    border-radius: 15px;
+    top: 57%;
+    width: auto;
+    height: auto;
+    transition: height 20s ease;
+    overflow: hidden;
+  }
+  .features .featsmiddle-description #description-text {
+    color: #bed9ff;
+    white-space: pre-line;
+    margin-left: 6px;
+    margin-right: 6px;
+    font-family: serif;
+  }
+  .featsmiddle-technames {
+    top: 47%;
+    font-size: 14px;
   }
   .features .flexbuttons-right {
     display: flex;
@@ -12154,6 +12248,7 @@ textarea.form-control-lg {
     right: 0;
     top: 0;
     bottom: 0;
+    z-index: 1;
   }
   .features .flexbuttons-right button {
     border-radius: 0px;
@@ -12182,24 +12277,34 @@ textarea.form-control-lg {
     background-color: #2c3281;
   }
   .projects {
-    width: 81%;
-    overflow: hidden;
-    left: 98px;
-    top: 25px;
-    position: absolute;
+    left: 143px;
+    width: 70%;
   }
   .projects .myprojects-carousel {
     flex-direction: row;
     position: relative;
-    max-width: 100%;
-    top: 45px;
-    height: 90%;
-    left: 0;
+    margin-top: 70px;
+    margin-bottom: 50px;
+    transition: left 0.5s ease;
+    left: 0px;
   }
   .projects .myprojects-carousel .angular-project, .projects .myprojects-carousel .node-project, .projects .myprojects-carousel .python-project {
     width: 100%;
+    height: 82%;
+    left: auto;
   }
-  .projects .myprojects-carousel .project-img {
+  .projects .myprojects-carousel .project-subtitltes-nod, .projects .myprojects-carousel .project-subtitltes-side {
+    display: flex;
+    position: absolute;
+    color: #537fc7;
+    bottom: 0;
+    left: 0;
+    top: 270px;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+  }
+  .projects .myprojects-carousel .showcase-wallpaper {
     height: 100%;
     width: 100%;
     position: absolute;
@@ -12208,7 +12313,7 @@ textarea.form-control-lg {
     text-align: center;
   }
   .projects .myprojects-carousel .inner-text-up {
-    color: white;
+    color: rgb(222, 222, 222);
     position: absolute;
     top: 0;
     display: flex;
@@ -12221,7 +12326,7 @@ textarea.form-control-lg {
     margin: 0;
   }
   .projects .myprojects-carousel .inner-text-bot {
-    color: white;
+    color: rgb(222, 222, 222);
     position: absolute;
     left: 25%;
     bottom: 0;
@@ -12232,15 +12337,6 @@ textarea.form-control-lg {
     font-size: 24px;
     font-family: auto;
     margin: 0;
-  }
-  .projects .myprojects-carousel .project-subtitltes {
-    color: #8c9ffd;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    margin-bottom: 10px;
-    font-family: math;
-    text-align: center;
   }
   .projects .myprojects-carousel .angular-project {
     position: relative;
@@ -12272,107 +12368,113 @@ textarea.form-control-lg {
     cursor: pointer;
   }
   .about-me {
-    max-width: 92%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
   }
   .about-me .left-info, .about-me .mid-info, .about-me .right-info {
     top: 78px;
     height: 246px;
     width: 366px;
-    border: 1px dashed cyan;
+    border: 1px solid cyan;
   }
   .about-me .left-info h3, .about-me .left-info .h3, .about-me .mid-info h3, .about-me .mid-info .h3, .about-me .right-info h3, .about-me .right-info .h3 {
     margin-left: 25px;
     width: 85%;
   }
   .about-me .info-container {
-    height: 392px;
-    justify-content: flex-start;
+    width: 92.6%;
+    height: 100%;
+    position: absolute;
+    border-radius: 1px;
+    top: 0;
+  }
+  .about-me .i-left {
+    left: 17px;
+    width: 26%;
+    margin-left: 26px;
     position: relative;
-    left: 16%;
-    max-width: 82%;
-    bottom: 20px;
   }
-  .about-me .info-container .left-info {
-    left: 1px;
+  .about-me .i-mid {
+    left: 75px;
+    position: relative;
+    text-wrap: wrap;
+    width: 25%;
   }
-  .about-me .info-container .mid-info {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-  .about-me .info-container .right-info {
-    left: 0;
+  .about-me .i-right {
+    right: -125px;
+    margin-right: 50px;
+    position: relative;
+    width: 25%;
+    text-wrap: wrap;
   }
   .about-me .cv-container {
-    bottom: 31%;
-    height: 145px;
-    width: 152px;
-    left: 8%;
+    z-index: 1;
+    padding: 5px;
+    width: auto;
+    height: 107px;
+    position: absolute;
+    left: 25px;
+    top: 160px;
+    background-color: #170952;
   }
   .about-me .cv-container #button-CV {
-    height: 125px;
-    width: 125px;
     font-size: larger;
-    left: 14px;
+  }
+  .about-me .cv-container #button-CV:active {
+    background-color: #0a58ca;
   }
   .about-me img {
     display: none;
   }
 }
-@media screen and (min-width: 1025px) and (max-width: 1320px) {
-  .features .about-me {
-    max-width: 89%;
+@media screen and (min-width: 1024px) and (max-width: 1320px) {
+  .projects {
+    left: 0;
+    width: 100%;
   }
   .features .about-me .cv-container {
-    height: 121px;
-    width: 115px;
-    left: 9%;
-  }
-  .features .about-me .cv-container #button-CV {
-    height: 101px;
-    overflow: hidden;
-    width: 83px;
-    left: 13px;
+    left: 0;
+    width: 82px;
   }
 }
-@media screen and (min-width: 920px) and (max-width: 1023px) {
-  .features .flexbuttons-left {
-    left: 15%;
+@media screen and (max-width: 540px) {
+  .projects .myprojects-carousel {
+    height: 90%;
   }
 }
-@media screen and (max-width: 912px) and (min-width: 699px) {
-  .features .flexbuttons-left {
-    left: 10%;
+@media screen and (max-width: 344px) {
+  .projects .myprojects-carousel {
+    height: 67%;
   }
 }
-@media screen and (max-width: 360px) {
-  .myprojects-carousel {
-    height: 330px;
+@media screen and (max-width: 362px) {
+  .projects .myprojects-carousel {
+    height: 67%;
   }
-}
-@media screen and (max-width: 365px) {
-  .about-me .cv-container {
-    height: 69px;
-    bottom: -55px;
-  }
-  .about-me .cv-container #button-CV {
-    height: 58px;
-  }
-}
-@media screen and (max-width: 336px) {
   .features .flexbuttons-top {
     flex-direction: column;
   }
+  .info-container {
+    top: 0;
+  }
   .features .featsmiddle-description {
-    top: 65%;
+    top: 0;
+  }
+  .features .featsmiddle-description #description-text {
+    height: 100px;
   }
   .myprojects-carousel {
     height: 275px;
   }
+  .myprojects-carousel #up-arrow {
+    top: 125px;
+  }
   .about-me .cv-container {
-    height: 76px;
-    bottom: 201px;
+    top: 235px;
+    height: 44px;
   }
   .about-me .cv-container #button-CV {
-    height: 52px;
+    height: 100%;
   }
 }/*# sourceMappingURL=features.css.map */
