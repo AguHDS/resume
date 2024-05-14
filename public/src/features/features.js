@@ -73,6 +73,7 @@ let pixelValueLeft = 0;
 let number = null;
 let numberAbout = 0;
 let isMobile = false;
+let isWriting;
 
 //desktop and mobile
 document.addEventListener('DOMContentLoaded', ()=> {
@@ -197,8 +198,10 @@ const showTechIcons = async (e) => {
   let index_text = 0;
   let index_names = 0;
 
+
   const addDynamicText = (text, names)=> {
-    if (index_text < text.length && number === 0 || index_text < text.length && number === 3 || number === 5) { //el n° 0 impide que se agregue mas texto luego de hacer doble click, arreglar esto con la nueva funcion
+    if (index_text < text.length && number === 0 || index_text < text.length && number === 3 || index_text < text.length && number === 5) {//el n° 0 impide que se agregue mas texto luego de hacer doble click, arreglar esto con la nueva funcion
+      isWriting = true; 
       description.innerHTML += text[index_text];
       index_text++;
 
@@ -211,27 +214,28 @@ const showTechIcons = async (e) => {
         addDynamicText(text, names);
         console.log('a')
       }, 5);
+    }else {
+      isWriting = false;
     }
+    console.log(isWriting)
   }
 
   const techDescription = (id) => {
     id = e.target.id;
     const languageSelect = document.querySelector('.language-select');
 
-    if(id === data.BUTTONS.USES) {
+    if(id === data.BUTTONS.USES && !isWriting) {
       let usesText;
       let usesNames = `boostrap, javascript, sass, git, sql, node`;
 
       if(languageSelect.value === 'es') {
         usesText = `Las tecnologias que estoy usando en proyectos personales y con las que me siento más cómodo, siendo node y sql las que menos domino y tengo pensado profundizar.`;
       }else {
-        usesText = `The technologies that i am using in personal projects and with which i feel most comfortable, being Node and sql the ones i know the least and i'm planning to delve deeper.`;
+        usesText = `The technologies that i'm using in personal projects and with which i feel most comfortable, being node and sql the ones i know the least and i'm planning to delve deeper.`;
       }
-    
       addDynamicText(usesText, usesNames);
-     
     }
-    else if(id === data.BUTTONS.PRACTICE) {
+    else if(id === data.BUTTONS.PRACTICE && !isWriting) {
       let practiceText;
       let practiceNames = `node, angular, typescript, python`;
 
@@ -242,7 +246,7 @@ const showTechIcons = async (e) => {
       }
       addDynamicText(practiceText, practiceNames);
     }
-    else if(id === data.BUTTONS.PROF) {
+    /* else if(id === data.BUTTONS.PROF) {
       text = `Las tecnologias con las que tengo experiencia trabajando en el hambito laboral. `;
       names = `javascript, sass, git, node, wordpress, vue`;
 
@@ -259,19 +263,19 @@ const showTechIcons = async (e) => {
           techDescription();
         }, 5);
       }
-    }
+    } */
   };
 
 switch (id) {
   case data.BUTTONS.USES:
-    if (number === 0) {
+    if (number === 0 && !isWriting) {
       description.innerHTML = ''; //esta parte ponerla en la descripcion kapaz
       techNames.innerHTML = '';
 
       buttonStates[id].icons.forEach(e => e.classList.add('opacity'));
       number = 1;
       
-    } else {
+    } else if(!isWriting){
       addOpacity(buttonStates[data.BUTTONS.PRACTICE].icons);
       addOpacity(buttonStates[data.BUTTONS.PROF].icons);
       buttonStates[id].icons.forEach(e => e.classList.remove('opacity'));
@@ -284,13 +288,13 @@ switch (id) {
     break;
 
     case data.BUTTONS.PRACTICE:
-      if (number === 3) {
+      if (number ===  3 && !isWriting) {
         description.innerHTML = '';
         techNames.innerHTML = '';
 
         buttonStates[id].icons.forEach(e => e.classList.add('opacity'));
         number = 2;
-      } else {
+      } else if(!isWriting){
         addOpacity(buttonStates[data.BUTTONS.USES].icons);
         addOpacity(buttonStates[data.BUTTONS.PROF].icons);
         buttonStates[data.BUTTONS.PRACTICE].icons.forEach(e => e.classList.remove('opacity'));
@@ -302,7 +306,7 @@ switch (id) {
       }
     break;
 
-    case data.BUTTONS.PROF:
+    /* case data.BUTTONS.PROF:
       if (number === 5) {
         description.innerHTML = '';
         techNames.innerHTML = '';
@@ -319,7 +323,7 @@ switch (id) {
         techNames.innerHTML = '';
         techDescription(id);
       }
-    break;
+    break; */
   }
 };
 
