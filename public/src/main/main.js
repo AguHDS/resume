@@ -3,9 +3,9 @@ let feats = document.querySelector('.dynamic-feats');
 
 export const getFeatures = () => {
   console.log('Sending request...'); //checking if the promise is only completing once, and not multiple times
+
   const features = './src/features/features.html';
-  
-  return fetch(features)
+    return fetch(features)
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');

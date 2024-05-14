@@ -194,48 +194,53 @@ const showTechIcons = async (e) => {
     }
   };
 
-  let index = 0;
-  let index2 = 0;
+  let index_text = 0;
+  let index_names = 0;
+
+  const addDynamicText = (text, names)=> {
+    if (index_text < text.length && number === 0 || index_text < text.length && number === 3 || number === 5) { //el n° 0 impide que se agregue mas texto luego de hacer doble click, arreglar esto con la nueva funcion
+      description.innerHTML += text[index_text];
+      index_text++;
+
+      if(index_names < names.length) {
+        techNames.innerHTML += names[index_names];
+        index_names++;
+      }
+
+      setTimeout(() => {
+        addDynamicText(text, names);
+        console.log('a')
+      }, 5);
+    }
+  }
 
   const techDescription = (id) => {
     id = e.target.id;
-    let text;
-    let names;
+    const languageSelect = document.querySelector('.language-select');
 
     if(id === data.BUTTONS.USES) {
-      text = `Las tecnologias que estoy usando en proyectos personales y con las que me siento más cómodo, siendo node y sql las que menos domino y tengo pensado profundizar.`;
-      names = `boostrap, javascript, sass, git, sql, node`;
-      if (index < text.length && number === 0) {
-        description.innerHTML += text[index];
-        index++;
+      let usesText;
+      let usesNames = `boostrap, javascript, sass, git, sql, node`;
 
-        if(index2 < names.length) {
-          techNames.innerHTML += names[index2];
-          index2++;
-        }
-
-        setTimeout(() => {
-          techDescription();
-        }, 5);
+      if(languageSelect.value === 'es') {
+        usesText = `Las tecnologias que estoy usando en proyectos personales y con las que me siento más cómodo, siendo node y sql las que menos domino y tengo pensado profundizar.`;
+      }else {
+        usesText = `The technologies that i am using in personal projects and with which i feel most comfortable, being Node and sql the ones i know the least and i'm planning to delve deeper.`;
       }
+    
+      addDynamicText(usesText, usesNames);
+     
     }
     else if(id === data.BUTTONS.PRACTICE) {
-      text = `Las tecnologias que me interesan y a las que les voy a dedicar mas tiempo en proyectos personales.`;
-      names = `node, angular, typescript, python`;
+      let practiceText;
+      let practiceNames = `node, angular, typescript, python`;
 
-      if (index < text.length && number === 3) {
-        description.innerHTML += text[index];
-        index++;
-        
-        if(index2 < names.length) {
-          techNames.innerHTML += names[index2];
-          index2++;
-        }
-
-        setTimeout(() => {
-          techDescription();
-        }, 5);
+      if(languageSelect.value === 'es') {
+        practiceText = `Las tecnologias que me interesan y a las que les voy a dedicar mas tiempo en proyectos personales.`;
+      }else {
+        practiceText = `The technologies i have more interest in and those i will dedicate more time in my personal projects.`;
       }
+      addDynamicText(practiceText, practiceNames);
     }
     else if(id === data.BUTTONS.PROF) {
       text = `Las tecnologias con las que tengo experiencia trabajando en el hambito laboral. `;
@@ -260,11 +265,12 @@ const showTechIcons = async (e) => {
 switch (id) {
   case data.BUTTONS.USES:
     if (number === 0) {
-      description.innerHTML = '';
+      description.innerHTML = ''; //esta parte ponerla en la descripcion kapaz
       techNames.innerHTML = '';
 
       buttonStates[id].icons.forEach(e => e.classList.add('opacity'));
       number = 1;
+      
     } else {
       addOpacity(buttonStates[data.BUTTONS.PRACTICE].icons);
       addOpacity(buttonStates[data.BUTTONS.PROF].icons);
@@ -278,7 +284,7 @@ switch (id) {
     break;
 
     case data.BUTTONS.PRACTICE:
-      if (number == 3) {
+      if (number === 3) {
         description.innerHTML = '';
         techNames.innerHTML = '';
 
@@ -297,7 +303,7 @@ switch (id) {
     break;
 
     case data.BUTTONS.PROF:
-      if (number == 5) {
+      if (number === 5) {
         description.innerHTML = '';
         techNames.innerHTML = '';
 

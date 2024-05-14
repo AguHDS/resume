@@ -1,17 +1,17 @@
 <section class="features">
   <div class="flex-buttons">
     <div class="flexbuttons-top">
-      <button type="button" class="btn btn-primary" id="btn-technologies-top" role="button" tabindex="0">Tecnologías</button>
-      <button type="button" class="btn btn-primary" id="btn-projects-top" role="button" tabindex="0">Proyectos</button>
-      <button type="button" class="btn btn-primary" id="btn-about-top" role="button" tabindex="0">Sobre mí</button>
+      <button type="button" class="btn btn-primary" id="btn-technologies-top" role="button" data-section="features" data-value="technologies" tabindex="0">Tecnologías</button>
+      <button type="button" class="btn btn-primary" id="btn-projects-top" role="button" data-section="features" data-value="projects" tabindex="0">Proyectos</button>
+      <button type="button" class="btn btn-primary" id="btn-about-top" role="button" data-section="features" data-value="about" tabindex="0">Sobre mí</button>
     </div>
     <div class="flexbuttons-right">
-      <button type="button" class="btn btn-primary" id="btn-technologies-right" role="button" tabindex="0">Tecnologías</button>
-      <button type="button" class="btn btn-primary" id="btn-projects-right" role="button" tabindex="0">Proyectos</button>
-      <button type="button" class="btn btn-primary" id="btn-about-right" role="button" tabindex="0">Sobre mí</button>
+      <button type="button" class="btn btn-primary" id="btn-technologies-right" role="button" data-section="features" data-value="technologies" tabindex="0">Tecnologías</button>
+      <button type="button" class="btn btn-primary" id="btn-projects-right" role="button" data-section="features" data-value="projects" tabindex="0">Proyectos</button>
+      <button type="button" class="btn btn-primary" id="btn-about-right" role="button" data-section="features" data-value="about" tabindex="0">Sobre mí</button>
     </div>
   </div>
-  <div class="initial-message">Click en los botones para mas info!</div>
+  <div class="initial-message" data-section="features" data-value="initial_message">Click en los botones para mas info!</div>
   <div class="techs">
     <div class="featsmiddle-container">
       <div class="container-img">
@@ -35,9 +35,9 @@
       <div class="text" id="description-text"></div>
     </div>
       <div class="flexbuttons-left">
-        <button type="button" class="btn btn-primary btnLeft" id="btn-practice" role="button" tabindex="0">Cuales quiero aprender</button>
-        <button type="button" class="btn btn-primary btnLeft" id="btn-uses" role="button" tabindex="0">Cuales uso</button>
-        <button type="button" class="btn btn-primary btnLeft" id="btn-pro" role="button" tabindex="0">Usadas en ámbito laboral</button>
+        <button type="button" class="btn btn-primary btnLeft" id="btn-practice" role="button" data-section="features" data-value="learn" tabindex="0">Cuales quiero aprender</button>
+        <button type="button" class="btn btn-primary btnLeft" id="btn-uses" role="button" data-section="features" data-value="uses" tabindex="0">Cuales uso</button>
+        <button type="button" class="btn btn-primary btnLeft" id="btn-pro" role="button" data-section="features" data-value="prof" tabindex="0">Usadas en ámbito laboral</button>
       </div>
   </div>
   <div class="projects">
@@ -67,34 +67,34 @@
   <div class="about-me">
     <img src="../../images/arrow-slider.png" id="left-arrow" alt="arrow-slider" arial-label="arrow left slider" tabindex="0">
     <div class="cv-container">
-      <button type="button" class="btn btn-primary" id="button-CV" role="button" tabindex="0" aria-label="download CV">Descargar <br> CV</button>
+      <button type="button" class="btn btn-primary" id="button-CV" role="button" data-section="features" data-value="cv" aria-label="download CV" tabindex="0">Descargar <br> CV</button>
     </div>
     <div class="info-container">
       <div class="left-info i-left">
-        <h3>Estudios</h3>
+        <h3 data-section="features" data-value="title">Estudios</h3>
         <div class="information">
-          <p>. Secundario completo: Economía</p>
-          <p>. Cursando tecnicatura de desarrollo de software</p>
-          <p>. Me capacito de forma individual con cursos y proyectos personales</p>
-          <p>. Nivel de inglés: Avanzado</p>
+          <p data-section="features" data-value="highschool">. Secundario completo: Economía</p>
+          <p data-section="features" data-value="curse">. Cursando tecnicatura de desarrollo de software</p>
+          <p data-section="features" data-value="practicing">. Me capacito de forma individual con cursos y proyectos personales</p>
+          <p data-section="features" data-value="language">. Nivel de inglés: Avanzado</p>
         </div>
       </div>
       <div class="mid-info i-mid">
-        <h3>Información personal</h3>
+        <h3 data-section="features" data-value="title_personal_info">Información personal</h3>
         <div class="information">
-          <p>. Nombre y apellido: Agustin Butti</p>
-          <p>. Localidad: Argentina - Rosario</p>
-          <p>. Fecha de nacimiento: 19/06/1998</p>
-          <p>. Correo: agustinbutti-cs@hotmail.com</p>
-          <p>. Num celular: 341-3189431</p>
+          <p data-section="features" data-value="name">. Nombre y apellido: Agustin Butti</p>
+          <p data-section="features" data-value="location">. Localidad: Argentina - Rosario</p>
+          <p data-section="features" data-value="birthdate">. Fecha de nacimiento: 19/06/1998</p>
+          <p data-section="features" data-value="email">. Correo: agustinbutti-cs@hotmail.com</p>
+          <p data-section="features" data-value="phone">. Num celular: 341-3189431</p>
         </div>
       </div>
       <div class="right-info i-right">
-        <h3>Experiencia Laboral</h3>
+        <h3 data-section="features" data-value="title_experience">Experiencia Laboral</h3>
         <div class="information">
-          <p>. Trabajé como desarrollador de software en Accenture</p>
-          <p>. Fecha de ingreso: Noviembre 2020</p>
-          <p>. Fecha de salida: Mayo 2023</p>
+          <p data-section="features" data-value="last_job">. Trabajé como desarrollador de software en Accenture</p>
+          <p data-section="features" data-value="date_start">. Fecha de ingreso: Noviembre 2020</p>
+          <p data-section="features" data-value="date_end">. Fecha de salida: Mayo 2023</p>
         </div>
       </div>
     </div>
