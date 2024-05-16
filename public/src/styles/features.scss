@@ -34,6 +34,7 @@
   position: relative;
   display: flex;
   max-width: 100%;
+  white-space: nowrap;
   button {
     max-width: 100%;
     width: -webkit-fill-available;

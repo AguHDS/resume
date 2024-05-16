@@ -198,9 +198,8 @@ const showTechIcons = async (e) => {
   let index_text = 0;
   let index_names = 0;
 
-
   const addDynamicText = (text, names)=> {
-    if (index_text < text.length && number === 0 || index_text < text.length && number === 3 || index_text < text.length && number === 5) {//el n° 0 impide que se agregue mas texto luego de hacer doble click, arreglar esto con la nueva funcion
+    if (index_text < text.length) {
       isWriting = true; 
       description.innerHTML += text[index_text];
       index_text++;
@@ -209,124 +208,119 @@ const showTechIcons = async (e) => {
         techNames.innerHTML += names[index_names];
         index_names++;
       }
-
       setTimeout(() => {
         addDynamicText(text, names);
-        console.log('a')
       }, 5);
     }else {
       isWriting = false;
     }
-    console.log(isWriting)
   }
 
   const techDescription = (id) => {
     id = e.target.id;
     const languageSelect = document.querySelector('.language-select');
 
-    if(id === data.BUTTONS.USES && !isWriting) {
+    if(id === data.BUTTONS.USES) {
       let usesText;
       let usesNames = `boostrap, javascript, sass, git, sql, node`;
 
       if(languageSelect.value === 'es') {
-        usesText = `Las tecnologias que estoy usando en proyectos personales y con las que me siento más cómodo, siendo node y sql las que menos domino y tengo pensado profundizar.`;
+        usesText = `Las tecnologías que estoy usando en proyectos personales y con las que me siento más cómodo, siendo node y sql las que menos domino y tengo pensado profundizar.`;
       }else {
         usesText = `The technologies that i'm using in personal projects and with which i feel most comfortable, being node and sql the ones i know the least and i'm planning to delve deeper.`;
       }
       addDynamicText(usesText, usesNames);
     }
-    else if(id === data.BUTTONS.PRACTICE && !isWriting) {
+    else if(id === data.BUTTONS.PRACTICE) {
       let practiceText;
       let practiceNames = `node, angular, typescript, python`;
 
       if(languageSelect.value === 'es') {
-        practiceText = `Las tecnologias que me interesan y a las que les voy a dedicar mas tiempo en proyectos personales.`;
+        practiceText = `Las tecnologías que me interesan y a las que les voy a dedicar mas tiempo en proyectos personales.`;
       }else {
         practiceText = `The technologies i have more interest in and those i will dedicate more time in my personal projects.`;
       }
       addDynamicText(practiceText, practiceNames);
     }
-    /* else if(id === data.BUTTONS.PROF) {
-      text = `Las tecnologias con las que tengo experiencia trabajando en el hambito laboral. `;
-      names = `javascript, sass, git, node, wordpress, vue`;
+    else if(id === data.BUTTONS.PROF) {
+      let prof_text;
+      let prof_names = `javascript, sass, git, node, wordpress, vue`;
 
-      if (index < text.length && number === 5) {
-        description.innerHTML += text[index];
-        index++;
-
-        if(index2 < names.length) {
-          techNames.innerHTML += names[index2];
-          index2++;
-        }
-
-        setTimeout(() => {
-          techDescription();
-        }, 5);
+      if(languageSelect.value === 'es') {
+        prof_text = `Las tecnologías que usé en mi ultimo trabajo.`;
+      }else {
+        prof_text = `The technologies i used in my last job.`;
       }
-    } */
+      addDynamicText(prof_text, prof_names);
+    }
   };
 
 switch (id) {
   case data.BUTTONS.USES:
-    if (number === 0 && !isWriting) {
-      description.innerHTML = ''; //esta parte ponerla en la descripcion kapaz
-      techNames.innerHTML = '';
-
-      buttonStates[id].icons.forEach(e => e.classList.add('opacity'));
-      number = 1;
-      
-    } else if(!isWriting){
-      addOpacity(buttonStates[data.BUTTONS.PRACTICE].icons);
-      addOpacity(buttonStates[data.BUTTONS.PROF].icons);
-      buttonStates[id].icons.forEach(e => e.classList.remove('opacity'));
-      number = 0;
-
-      description.innerHTML = '';
-      techNames.innerHTML = '';
-      techDescription(id);
+    if(!isWriting) {
+      if (number === 0) {
+        description.innerHTML = '';
+        techNames.innerHTML = '';
+  
+        buttonStates[id].icons.forEach(e => e.classList.add('opacity'));
+        number = 1;
+        
+      }else {
+        addOpacity(buttonStates[data.BUTTONS.PRACTICE].icons);
+        addOpacity(buttonStates[data.BUTTONS.PROF].icons);
+        buttonStates[id].icons.forEach(e => e.classList.remove('opacity'));
+        number = 0;
+  
+        description.innerHTML = '';
+        techNames.innerHTML = '';
+        techDescription(id);
+      }
     }
     break;
 
     case data.BUTTONS.PRACTICE:
-      if (number ===  3 && !isWriting) {
-        description.innerHTML = '';
-        techNames.innerHTML = '';
-
-        buttonStates[id].icons.forEach(e => e.classList.add('opacity'));
-        number = 2;
-      } else if(!isWriting){
-        addOpacity(buttonStates[data.BUTTONS.USES].icons);
-        addOpacity(buttonStates[data.BUTTONS.PROF].icons);
-        buttonStates[data.BUTTONS.PRACTICE].icons.forEach(e => e.classList.remove('opacity'));
-        number = 3;
-        
-        description.innerHTML = '';
-        techNames.innerHTML = '';
-        techDescription(id);
+      if(!isWriting) {
+        if (number === 3) {
+          description.innerHTML = '';
+          techNames.innerHTML = '';
+  
+          buttonStates[id].icons.forEach(e => e.classList.add('opacity'));
+          number = 2;
+        }else {
+          addOpacity(buttonStates[data.BUTTONS.USES].icons);
+          addOpacity(buttonStates[data.BUTTONS.PROF].icons);
+          buttonStates[data.BUTTONS.PRACTICE].icons.forEach(e => e.classList.remove('opacity'));
+          number = 3;
+          
+          description.innerHTML = '';
+          techNames.innerHTML = '';
+          techDescription(id);
+        }
       }
     break;
 
-    /* case data.BUTTONS.PROF:
-      if (number === 5) {
-        description.innerHTML = '';
-        techNames.innerHTML = '';
-
-        buttonStates[id].icons.forEach(e => e.classList.add('opacity'));
-        number = 4;
-      } else {
-        addOpacity(buttonStates[data.BUTTONS.USES].icons);
-        addOpacity(buttonStates[data.BUTTONS.PRACTICE].icons);
-        buttonStates[id].icons.forEach(e => e.classList.remove('opacity'));
-        number = 5;
-
-        description.innerHTML = '';
-        techNames.innerHTML = '';
-        techDescription(id);
+    case data.BUTTONS.PROF:
+      if(!isWriting) {
+        if (number === 5) {
+          description.innerHTML = '';
+          techNames.innerHTML = '';
+  
+          buttonStates[id].icons.forEach(e => e.classList.add('opacity'));
+          number = 4;
+        }else {
+          addOpacity(buttonStates[data.BUTTONS.USES].icons);
+          addOpacity(buttonStates[data.BUTTONS.PRACTICE].icons);
+          buttonStates[id].icons.forEach(e => e.classList.remove('opacity'));
+          number = 5;
+  
+          description.innerHTML = '';
+          techNames.innerHTML = '';
+          techDescription(id);
+        }
       }
-    break; */
+    break;
   }
 };
-
 
 //setup all listeners for some data inside waitForFeatures() in only one function since it does multiple calls to getFeatures() when using await waitForFeatures() more than once in the code, and it will break (although we are already using await waitForFeatures() again in showTechIcons(), so i have to figure it out why is not working when doing multiple calls)
 const setupEventListeners = async () => {

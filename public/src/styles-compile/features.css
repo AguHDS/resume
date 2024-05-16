@@ -11888,6 +11888,7 @@ textarea.form-control-lg {
   position: relative;
   display: flex;
   max-width: 100%;
+  white-space: nowrap;
 }
 .flexbuttons-top button {
   max-width: 100%;
