@@ -23,3 +23,6 @@ Secondary changes to make:
 Last changes i made:
 
 - Saving current language on localstorage
+
+estoy intentando publicar esto en github webpages, pero no entiendo como hacer para que la pagina se vea (me tira 404) y si mergeo las branch 
+para que la mia y la main esten ambas con los cambios mas recientes se rompe todo, intentar arreglar esto
